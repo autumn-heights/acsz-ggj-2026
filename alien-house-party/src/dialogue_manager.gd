@@ -4,14 +4,37 @@ var json_data: Dictionary
 var console_label: Label
 var choice_container: VBoxContainer
 
+var current_script_id: String
+var current_line_id: int = -1;
+var num_lines_in_current_script: int = -1;
+
+@onready var dialogue_box = %DialogueBox
+
 func load_json_file(path: String) -> void:
 	var json_string: String = FileAccess.get_file_as_string(path)
 	var parse_result = JSON.parse_string(json_string) 
 	json_data = parse_result
 
 func start_dialogue(script_id: String):
-	# CNTODO: look up the ID in the dict and decide whether to call display text or display choice
+	# CNTODO: look up the ID in the dict and decide whether
+	# to call display text or display choice
+	
+	if json_data[script_id]["type"] = "talking":
+		
+		current_script_id = script_id;
+		dialogue_box.visible = true;
+		num_lines_in_current_script = len(json_data[script_id]["lines"])
+		
+	
+	else if json_data[script_id]["type"] = "choice":
+	
+	
 	pass
+
+func _on_advance_dialogue():
+	# FUNCTION THAT GETS TRIGGERED WHEN THE PLAYER ADVANCES THE DIALOGUE BOX
+	# TODO: if there's another line of dialogue to display, then do that
+	# TODO: if there's not another line of dialogue to display, then close the dialogue box
 
 func display_text(data: String):
 	pass
@@ -55,11 +78,10 @@ func _ready():
 	
 	console_label.text = "test"
 	
-	print("hello world")
 	load_json_file("res://script.json")
 	
 	if json_data:
-		print(json_data)
+		print("LOADED SCRIPT: ", json_data)
 		
 
 

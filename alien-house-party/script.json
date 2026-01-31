@@ -1,11 +1,11 @@
 {
   "dialogue_1": {
 	"type": "talking",
-	  "lines": [
+  	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "hello"},
 		{"speaker": "PLAYER_CHARACTER", "text": "test"},
 		{"speaker": "NPC_CHARACTER", "text": "how are you"}
-	  ],
+  	],
 	"next": "choice_1"
   },
   "choice_1": {

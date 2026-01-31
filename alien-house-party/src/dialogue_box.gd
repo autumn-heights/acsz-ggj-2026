@@ -45,10 +45,7 @@ func set_new_text(new_text: String):
 # return format:
 # { 
 #	"is_complete": false,
-#	"lines": [
-#		"my first line of dialogue",
-#		"my second li"
-#	]
+#	"text: "My awesome dialo"
 # }
 func _get_frame_displayed_text() -> Dictionary:
 	var total_chars = len(current_text);

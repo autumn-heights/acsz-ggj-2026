@@ -10,7 +10,7 @@ signal dialogue_advance
 @export var current_display_time: float = 0;
 @export var max_line_length: int = 30; # in chars
 @export var ready_to_advance: bool = 0;
-@export var text_print_speed: float = 6.0; #in chars per second
+@export var text_print_speed: float = 10.0; #in chars per second
 
 var display_text_dict: Dictionary = {"is_complete": true, "text":"text"};
 
@@ -45,10 +45,7 @@ func set_new_text(new_text: String):
 # return format:
 # { 
 #	"is_complete": false,
-#	"lines": [
-#		"my first line of dialogue",
-#		"my second li"
-#	]
+#	"text: "My awesome dialo"
 # }
 func _get_frame_displayed_text() -> Dictionary:
 	var total_chars = len(current_text);
@@ -63,4 +60,5 @@ func _get_frame_displayed_text() -> Dictionary:
 	
 	
 func _on_advance_button_pressed() -> void:
+	print('dialogue_advance!!!')
 	dialogue_advance.emit();

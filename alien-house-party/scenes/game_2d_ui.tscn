@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://da61oxfaolifo"]
 
+[ext_resource type="PackedScene" uid="uid://b0c8bps8x60hk" path="res://scenes/dialogue_box.tscn" id="1_u85jq"]
+
 [node name="Game2DUI" type="Node2D" unique_id=1488848559]
 
 [node name="DialogueBoxPlaceholder" type="Label" parent="." unique_id=911017999]
@@ -31,3 +33,14 @@ text = "NPC
 Portrait
 o  o
 ____"
+
+[node name="DialogueBox" parent="." unique_id=1567766212 instance=ExtResource("1_u85jq")]
+position = Vector2(54, 423)
+dialogue_box_width = null
+dialogue_box_height = null
+dialogue_box_padding = null
+current_text = null
+current_display_time = null
+max_line_length = null
+ready_to_advance = null
+text_print_speed = null

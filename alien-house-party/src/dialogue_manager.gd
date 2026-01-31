@@ -41,35 +41,33 @@ func load_json_file(path: String) -> void:
 	var parse_result = JSON.parse_string(json_string) 
 	json_data = parse_result
 
-func start_dialogue(script_id: String):
-	# CNTODO: look up the ID in the dict and decide whether
-	# to call display text or display choice
+func trigger_new_dialogue(script_id: String):
 	
 	if json_data[script_id]["type"] == "talking":
-		
 		current_script_id = script_id;
-		current_line_id = 0
+		current_line_id = -1
 		dialogue_box.visible = true;
 		num_lines_in_current_script = len(json_data[script_id]["lines"])
-		display_text(json_data[script_id]["lines"][0]["text"])
-		
+		try_next_dialogue_line()
 	
 	elif json_data[script_id]["type"] == "choice":
-		
 		pass
-		
 		# TODO: display the choice options on the screen
-	
-	pass
+
+func try_next_dialogue_line():
+	# if there's another line of dialogue to display, then do that
+	# if there's not another line of dialogue to display, then close the dialogue box
+	if current_line_id < num_lines_in_current_script -1 :
+		current_line_id += 1
+		display_text(json_data[current_script_id]["lines"][current_line_id]["text"])
+	else:
+		pass
+		# TODO: Handle end of dialogue, trigger next step per jsonscript
 
 func _on_advance_dialogue():
 	# FUNCTION THAT GETS TRIGGERED WHEN THE PLAYER ADVANCES THE DIALOGUE BOX
-	# TODO: if there's another line of dialogue to display, then do that
-	# TODO: if there's not another line of dialogue to display, then close the dialogue box
-	if current_line_id < num_lines_in_current_script - 1:
-		current_line_id += 1
-		display_text(json_data[current_script_id]["lines"][current_line_id]["text"])
-	pass
+	try_next_dialogue_line()
+
 
 func display_text(data: String):
 	dialogue_box.set_new_text(data);
@@ -136,4 +134,4 @@ func _process(delta: float) -> void:
 
 
 func _on_debug_convo_button_pressed() -> void:
-	start_dialogue("dialogue_1");
+	trigger_new_dialogue("dialogue_1");

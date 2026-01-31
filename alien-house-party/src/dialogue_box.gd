@@ -2,15 +2,17 @@ extends Node2D
 
 signal dialogue_advance
 
-@export var dialogue_box_width: int = 500
+@export var dialogue_box_width: int = 700
 @export var dialogue_box_height: int = 200
 @export var dialogue_box_padding: int = 20
+@export var dialogue_box_color: Color = "#bfff3c"
 
 @export var current_text: String = "example text here textextextetxxtetxt"
 @export var current_display_time: float = 0;
 @export var max_line_length: int = 30; # in chars
 @export var ready_to_advance: bool = 0;
 @export var text_print_speed: float = 10.0; #in chars per second
+
 
 var display_text_dict: Dictionary = {"is_complete": true, "text":"text"};
 
@@ -41,6 +43,9 @@ func set_new_text(new_text: String):
 	current_display_time = 0
 	advance_button.visible = false
 	
+func set_new_color(new_color: Color):
+	dialogue_box_color = new_color
+	bg.color = new_color
 	
 # return format:
 # { 

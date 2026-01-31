@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cwpfw20bvixbl"]
+
+[ext_resource type="Script" uid="uid://bgtpx7xic8gs0" path="res://GamestateManager.gd" id="1_2ogfo"]
+[ext_resource type="PackedScene" uid="uid://dn4sag3gp128a" path="res://HouseLayer.tscn" id="2_wube1"]
+[ext_resource type="PackedScene" uid="uid://di87unbv7agon" path="res://Gridmap/map_3d.tscn" id="3_h5bcj"]
+
+[node name="GamestateManager" type="Node" unique_id=290236753]
+script = ExtResource("1_2ogfo")
+
+[node name="Layers2D" type="Node2D" parent="." unique_id=1836540943]
+
+[node name="TileLayer1" parent="Layers2D" unique_id=281855111 instance=ExtResource("2_wube1")]
+
+[node name="World3D" type="SubViewport" parent="." unique_id=626457027]
+
+[node name="Map3d" parent="World3D" unique_id=156595568 instance=ExtResource("3_h5bcj")]
+
+[node name="Camera3D" type="Camera3D" parent="World3D" unique_id=1283088183]

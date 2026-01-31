@@ -1,0 +1,39 @@
+{
+  "dialogue_1": {
+	"type": "talking",
+	  "lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "hello"},
+		{"speaker": "PLAYER_CHARACTER", "text": "test"},
+		{"speaker": "NPC_CHARACTER", "text": "how are you"}
+	  ],
+	"next": "choice_1"
+  },
+  "choice_1": {
+	"type": "choice",
+	"choices": [
+	  {
+		"text": "choice_1",
+		"check": 0.5,
+		"flags": ["has_cigarette"],
+		"pass": "dialogue_3",
+		"fail": "dialogue_4"
+	  },
+	  {
+		"text": "choice_2",
+		"check": 0.5,
+		"flags": [],
+		"pass": "dialogue_5",
+		"fail": "dialogue_6"
+	  }
+	]
+  },
+  "dialogue_3": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "NPC_CHARACTER", "text": "nice one bro. epic"}
+		],
+	"update_stats": { "social_mask": 5 },
+	"set_flag": "can_now_talk_to_jessica",
+	"next": null
+  }
+}

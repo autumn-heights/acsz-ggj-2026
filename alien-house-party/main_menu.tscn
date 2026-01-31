@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d0geo03l3ca38"]
+
+[ext_resource type="Texture2D" uid="uid://bouad8y0timkw" path="res://assets/ring-doorbell.png" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://s4mdsnvydq78" path="res://assets/alien-house-party-logo.png" id="2_fu7sn"]
+
+[node name="MainMenu" type="Control" unique_id=266951392]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1573420003]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 1040.0
+texture = ExtResource("1_7vrkn")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=118640373]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -539.0
+offset_top = -303.0
+offset_right = -49.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fu7sn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1711612265]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.051000003
+anchor_top = 0.18800001
+anchor_right = -0.051000003
+anchor_bottom = 0.18800001
+offset_left = 958.752
+offset_top = 278.176
+offset_right = 1258.752
+offset_bottom = 578.176
+
+[node name="DoorbellButton" type="Button" parent="VBoxContainer" unique_id=832006962]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Ring the doorbell"
+
+[node name="DoorknockButton" type="Button" parent="VBoxContainer" unique_id=970520590]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+text = "Knock on the door"

@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://di87unbv7agon"]
 
+[ext_resource type="MeshLibrary" uid="uid://01uci36armg6" path="res://Gridmap/HouseMeshLib.tres" id="1_56trd"]
 [ext_resource type="Script" uid="uid://dlad626kn8mgm" path="res://Gridmap/map_3d.gd" id="1_jomnk"]
 
-[sub_resource type="MeshLibrary" id="MeshLibrary_56trd"]
-
 [node name="Map3d" type="GridMap" unique_id=156595568]
-mesh_library = SubResource("MeshLibrary_56trd")
+mesh_library = ExtResource("1_56trd")
 script = ExtResource("1_jomnk")

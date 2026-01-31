@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b0c8bps8x60hk"]
+
+[ext_resource type="Script" uid="uid://bdg6mlcxyc3wi" path="res://src/dialogue_box.gd" id="1_rc1id"]
+
+[node name="DialogueBox" type="Node2D" unique_id=1567766212]
+script = ExtResource("1_rc1id")
+
+[node name="DialogueBoxBg" type="ColorRect" parent="." unique_id=702673155]
+unique_name_in_owner = true
+offset_right = 500.0
+offset_bottom = 200.0
+color = Color(0.54999083, 0.7470111, 0.43304396, 1)
+
+[node name="DialogueBoxLabel" type="Label" parent="." unique_id=911926145]
+unique_name_in_owner = true
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 480.0
+offset_bottom = 180.0
+text = "My awesome text"

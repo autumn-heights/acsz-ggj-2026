@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://b07xp62ibbid1"]
 
+[ext_resource type="PackedScene" uid="uid://da61oxfaolifo" path="res://scenes/game_2d_ui.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://myi27hyy6ijq" path="res://scenes/main.gd" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://d0geo03l3ca38" path="res://scenes/main_menu.tscn" id="2_0wfyh"]
+
 [node name="Main" type="Control" unique_id=1996756962]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +11,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sugp2")
+
+[node name="Game2dUi" parent="." unique_id=1488848559 instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true
+visible = false
+
+[node name="MainMenu" parent="." unique_id=266951392 instance=ExtResource("2_0wfyh")]
+unique_name_in_owner = true
+layout_mode = 1

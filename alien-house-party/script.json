@@ -2,9 +2,10 @@
   "dialogue_1": {
 	"type": "talking",
   	"lines": [
-		{"speaker": "PLAYER_CHARACTER", "text": "hello"},
-		{"speaker": "PLAYER_CHARACTER", "text": "test"},
-		{"speaker": "NPC_CHARACTER", "text": "how are you"}
+		{"speaker": "PLAYER_CHARACTER", "text": "Hold up a second..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "Someone's approaching!"},
+		{"speaker": "attendees_sprite_crushed1.png",
+			"text": "???: What a radical party, am I right?"}
   	],
 	"next": "choice_1"
   },

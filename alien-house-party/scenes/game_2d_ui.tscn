@@ -2,16 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dtiwmkkfqtlq1" path="res://src/dialogue_manager.gd" id="1_q2ys4"]
 [ext_resource type="PackedScene" uid="uid://b0c8bps8x60hk" path="res://scenes/dialogue_box.tscn" id="1_u85jq"]
+[ext_resource type="Texture2D" uid="uid://fksaf8aglqpw" path="res://assets/attendees/attendees_sprite_crushed1.png" id="3_bsvmh"]
 
 [node name="Game2DUI" type="Node2D" unique_id=1488848559]
 script = ExtResource("1_q2ys4")
-
-[node name="DialogueBoxPlaceholder" type="Label" parent="." unique_id=911017999]
-offset_left = 48.0
-offset_top = 515.0
-offset_right = 728.0
-offset_bottom = 625.0
-text = "dialogue box placeholder"
 
 [node name="ChecklistPlaceholder" type="Label" parent="." unique_id=209555367]
 offset_left = 809.0
@@ -26,21 +20,25 @@ placeholder
 placeholder
 placeholder"
 
-[node name="ChecklistPlaceholder2" type="Label" parent="." unique_id=1532019801]
-offset_left = 219.0
-offset_top = 73.0
-offset_right = 552.0
-offset_bottom = 447.0
-text = "NPC
-Portrait
-o  o
-____"
+[node name="NPCPortrait" type="TextureRect" parent="." unique_id=603920312]
+unique_name_in_owner = true
+visible = false
+offset_left = 194.0
+offset_top = 77.0
+offset_right = 595.0
+offset_bottom = 707.0
+texture = ExtResource("3_bsvmh")
+
+[node name="DebugConvoButton" type="Button" parent="." unique_id=720380371]
+offset_left = 548.0
+offset_top = 82.0
+offset_right = 756.0
+offset_bottom = 147.0
+text = "Have Debug Conversation"
 
 [node name="DialogueBox" parent="." unique_id=1567766212 instance=ExtResource("1_u85jq")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(54, 423)
+position = Vector2(35, 426)
 
-[node name="NPCPortrait" type="TextureRect" parent="." unique_id=603920312]
-offset_right = 40.0
-offset_bottom = 40.0
+[connection signal="pressed" from="DebugConvoButton" to="." method="_on_debug_convo_button_pressed"]

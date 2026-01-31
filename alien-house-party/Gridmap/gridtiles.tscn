@@ -1,5 +1,5 @@
-[gd_scene format=3 uid="uid://xm41qhx1uxr4"]
+[gd_scene format=3 uid="uid://c61gxnc2itbo3"]
 
-[ext_resource type="PackedScene" uid="uid://btdlrn5es60r8" path="res://Gridmap/Gridtiles.glb" id="1_p716j"]
+[ext_resource type="PackedScene" uid="uid://cw61mo5imcrk5" path="res://Gridmap/Gridtiles.glb" id="1_dqbk1"]
 
-[node name="Gridtiles" unique_id=574509587 instance=ExtResource("1_p716j")]
+[node name="Gridtiles" unique_id=1798157670 instance=ExtResource("1_dqbk1")]

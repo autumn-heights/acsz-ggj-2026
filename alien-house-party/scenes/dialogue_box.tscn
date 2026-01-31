@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b0c8bps8x60hk"]
 
 [ext_resource type="Script" uid="uid://bdg6mlcxyc3wi" path="res://src/dialogue_box.gd" id="1_rc1id"]
+[ext_resource type="Texture2D" uid="uid://ounrwott02nd" path="res://assets/down_arrow-export.png" id="2_fu8b5"]
 
 [node name="DialogueBox" type="Node2D" unique_id=1567766212]
 script = ExtResource("1_rc1id")
@@ -18,3 +19,14 @@ offset_top = 20.0
 offset_right = 480.0
 offset_bottom = 180.0
 text = "My awesome text"
+
+[node name="AdvanceButton" type="Button" parent="." unique_id=1593727256]
+unique_name_in_owner = true
+visible = false
+offset_left = 459.0
+offset_top = 186.0
+offset_right = 487.0
+offset_bottom = 214.0
+icon = ExtResource("2_fu8b5")
+
+[connection signal="pressed" from="AdvanceButton" to="." method="_on_advance_button_pressed"]

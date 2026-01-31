@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://dlf6k4p4yuleo"]
+[gd_scene format=3 uid="uid://bneb012aul7my"]
 
-[ext_resource type="Script" uid="uid://dtiwmkkfqtlq1" path="res://dialogue_manager.gd" id="1_k6lpl"]
+[sub_resource type="GDScript" id="GDScript_l8nsb"]
 
 [node name="DialogueManager" type="Control" unique_id=1785521991]
 layout_mode = 3
@@ -9,4 +9,4 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_k6lpl")
+script = SubResource("GDScript_l8nsb")

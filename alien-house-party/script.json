@@ -36,5 +36,123 @@
 	"update_stats": { "social_mask": 5 },
 	"set_flag": "can_now_talk_to_jessica",
 	"next": null
-  }
+  },
+"dialogue_kitchen_pizza_intro": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(Something smells good in here. Like baking bread.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(Oh, I see it now. They're making homemade pizzas.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(Jessica must have prepped a bunch of dough before the party, 
+		and now everyone gets to roll their own pizza and add toppings)."},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(Oh glod. Someone's noticed me.)"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: OH HEYYY if it isnt"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: little buddy :)"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: hey i just finished making my"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: flavour blasted"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: toppings unlimited"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: cheremy special two thousand and ooooooooone ;)"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: so there's a spare cutting board and roller here. wanna make your own?"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "choice_kitchen_1"
+  },
+	"choice_kitchen_pizza": {
+		"type": "choice",
+		"choices": [
+		  {
+			"text": "Politely decline",
+			"check": 1,
+			"required_flags": [],
+			"pass": "dialogue_kitchen_pizza_decline",
+			"fail": "dialogue_kitchen_pizza_decline"
+		  },
+		  {
+			"text": "Make a safe pizza",
+			"check": 0.8,
+			"required_flags": [],
+			"pass": "dialogue_kitchen_pizza_minor_success",
+			"fail": "dialogue_kitchen_pizza_minor_failure"
+		  },
+		  {
+			"text": "Make the pizza of your dreams",
+			"check": 0.5,
+			"required_flags": [],
+			"pass": "dialogue_kitchen_pizza_major_success",
+			"fail": "dialogue_kitchen_pizza_major_failure"
+		  },
+		  {
+			"text": "Make a weed cigarette pizza",
+			"check": 1,
+			"required_flags": ["has_cigarette"],
+			"pass": "dialogue_kitchen_pizza_weed",
+			"fail": "dialogue_kitchen_pizza_weed"
+		  }
+		]
+	  },
+	"dialogue_kitchen_pizza_decline": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: hey that's no skin off my back"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: just dont go trying to pinch any of the cheremy special okay"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: seeya later little dude :)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(That guy stresses me out.)"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": null
+  },"dialogue_kitchen_pizza_minor_success": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "Yes, let me have a go at it."},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(What do humans put on pizzas....???)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(I've seen pizzas in human cartoons... there's something red, and something yellow...)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(The tomato puree and the cheese are mostly used, so let's go with those.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(The puree reminds me of the delicious and useful goo I enjoyed back home.)"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: hey little dude, you just making a margherita?"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: classic for a reason (finger based gesture). give it some time and it'll be ready later"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: trust the proooocceesssss"}
+		],
+	"update_stats": {},
+	"set_flag": ["made_a_good_pizza"],
+	"next": null
+  },"dialogue_kitchen_pizza_major_success": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "Yes, let me have a go at it."},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(The whole kitchen is an array of human food components of varying familiarity.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "You know some of these are absolute no-nos to your palate, but you also know humans tend to react negatively"},
+		{"speaker": "attendees_sprite_crushed3",
+		"text": "cheremy: trust the proooocceesssss"}
+		],
+	"update_stats": {},
+	"set_flag": ["made_a_good_pizza"],
+	"next": null
+  },
 }

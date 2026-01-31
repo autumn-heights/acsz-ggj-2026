@@ -2,17 +2,30 @@
 
 [ext_resource type="Script" uid="uid://dtiwmkkfqtlq1" path="res://src/dialogue_manager.gd" id="1_q2ys4"]
 [ext_resource type="PackedScene" uid="uid://b0c8bps8x60hk" path="res://scenes/dialogue_box.tscn" id="1_u85jq"]
+[ext_resource type="Texture2D" uid="uid://ds8cltu414a3d" path="res://assets/clipboard-png-download.png" id="2_qyhqg"]
 [ext_resource type="Texture2D" uid="uid://fksaf8aglqpw" path="res://assets/attendees/attendees_sprite_crushed1.png" id="3_bsvmh"]
 
 [node name="Game2DUI" type="Node2D" unique_id=1488848559]
 script = ExtResource("1_q2ys4")
 
-[node name="ChecklistPlaceholder" type="Label" parent="." unique_id=209555367]
-offset_left = 809.0
-offset_top = 16.0
+[node name="Checklist" type="TextureRect" parent="." unique_id=1829189905]
+offset_left = 806.0
+offset_top = 28.0
 offset_right = 1119.0
-offset_bottom = 639.0
-text = "Checklist
+offset_bottom = 568.0
+texture = ExtResource("2_qyhqg")
+
+[node name="ChecklistPlaceholder" type="Label" parent="Checklist" unique_id=209555367]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 137.0
+offset_right = 271.0
+offset_bottom = 466.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HOW DO I CHANGE
+TEXT COLOUR??
+
+Checklist
 placeholder
 placeholder
 placeholder
@@ -39,6 +52,6 @@ text = "Have Debug Conversation"
 [node name="DialogueBox" parent="." unique_id=1567766212 instance=ExtResource("1_u85jq")]
 unique_name_in_owner = true
 visible = false
-position = Vector2(35, 426)
+position = Vector2(50, 379)
 
 [connection signal="pressed" from="DebugConvoButton" to="." method="_on_debug_convo_button_pressed"]

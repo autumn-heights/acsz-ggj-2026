@@ -6,6 +6,7 @@
 [node name="characterAnimator" type="Node2D" unique_id=1573118410]
 script = ExtResource("1_4m3kg")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=275221834]
+[node name="CharacterSprite" type="Sprite2D" parent="." unique_id=275221834]
+visible = false
 position = Vector2(331, 340)
 texture = ExtResource("2_k1i3f")

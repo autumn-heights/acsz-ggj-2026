@@ -3,6 +3,7 @@
 extends Node3D
 @export var gridmap :GridMap
 @export var tileLayers : TileLayers
+#@onready var tileLayers: TileLayers = $"../Layers2D"
 @export var alt_grid :GridMap
 @export var digest = false:
 	set(d):

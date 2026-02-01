@@ -5,7 +5,7 @@ var current_state : Gamestates
 @onready var map3d = $Map3d
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	map3d.digest_map(map2d.map_layer, map2d.floors)
+	#map3d.digest_map(map2d.map_layer, map2d.floors)
 	pass # Replace with function body.
 
 

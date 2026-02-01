@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cmsm38y06wrgj" path="res://2d_navigator.gd" id="1_02ohv"]
 [ext_resource type="Script" uid="uid://evtfoxwtpavh" path="res://player_character.gd" id="1_5up26"]
+[ext_resource type="Texture2D" uid="uid://bfq4lbfviagoh" path="res://icon.svg" id="3_4akcp"]
 
 [node name="PlayerCharacter" type="Node3D" unique_id=182982330]
 script = ExtResource("1_5up26")
@@ -9,7 +10,10 @@ script = ExtResource("1_5up26")
 [node name="2DNavigator" type="Node2D" parent="." unique_id=899987755]
 script = ExtResource("1_02ohv")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=448081645]
+[node name="MapSprite" type="Sprite2D" parent="2DNavigator" unique_id=237435356]
+texture = ExtResource("3_4akcp")
+
+[node name="PlayerCamera" type="Camera3D" parent="." unique_id=448081645]
 
 [connection signal="character_moved" from="2DNavigator" to="." method="OnCharacterMoved"]
 [connection signal="direction_changed" from="2DNavigator" to="." method="OnDirectionChanged"]

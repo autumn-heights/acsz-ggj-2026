@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bs1hrl1cwc45r"]
+
+[ext_resource type="PackedScene" uid="uid://brxe168epn3pq" path="res://player_character.tscn" id="1_wqw0q"]
+[ext_resource type="PackedScene" uid="uid://dn4sag3gp128a" path="res://HouseLayer.tscn" id="2_ibogg"]
+
+[node name="2DNavigation" type="Node2D" unique_id=1462292320]
+
+[node name="PlayerCharacter" parent="." unique_id=182982330 instance=ExtResource("1_wqw0q")]
+
+[node name="2DNavigator" parent="PlayerCharacter" index="0" unique_id=899987755]
+scale = Vector2(0.1, 0.1)
+
+[node name="MapSprite" parent="PlayerCharacter/2DNavigator" index="0" unique_id=237435356]
+position = Vector2(79.99999, 79.99999)
+
+[node name="TileLayer1" parent="." unique_id=281855111 instance=ExtResource("2_ibogg")]
+
+[editable path="PlayerCharacter"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bxvdksgwtmsmm"]
+
+[ext_resource type="PackedScene" uid="uid://rqvhenptiwuj" path="res://Gridmap/specialBlock.glb" id="1_u7hy1"]
+
+[node name="specialBlocks" unique_id=1537366085 instance=ExtResource("1_u7hy1")]

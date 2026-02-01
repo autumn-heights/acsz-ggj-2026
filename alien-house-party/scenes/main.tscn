@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://buapjuera4jaf" path="res://assets/audio/AlienDoorbell.ogg" id="4_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bs1hrl1cwc45r" path="res://scenes/2d_navigation.tscn" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://cjw1vug218dpf" path="res://assets/audio/AlienKnockogg.ogg" id="4_tipki"]
-[ext_resource type="PackedScene" uid="uid://xm41qhx1uxr4" path="res://Gridmap/gridtiles.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://c61gxnc2itbo3" path="res://Gridmap/gridtiles.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cwpfw20bvixbl" path="res://scenes/gamestate_manager.tscn" id="6_tefeu"]
 [ext_resource type="AudioStream" uid="uid://cutnasw68r35h" path="res://assets/audio/GGJ2026 Jersey Alien NoTail.ogg" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://bevhylkgndyba" path="res://assets/decor/bench_straight.tscn" id="9_dp3eg"]
@@ -121,8 +121,15 @@ transform = Transform3D(0.9999713, -0.0037080536, 0.006608506, 0.003724857, 0.99
 [node name="MusicStream" type="AudioStreamPlayer" parent="." unique_id=630698904]
 stream = ExtResource("7_o6xl0")
 
+[connection signal="pressed_go_left" from="Game2dUi" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_game_2d_ui_pressed_go_left"]
+[connection signal="pressed_go_right" from="Game2dUi" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_game_2d_ui_pressed_go_right"]
+[connection signal="pressed_go_straight" from="Game2dUi" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_game_2d_ui_pressed_go_straight"]
+[connection signal="MovementStateChanged" from="2DNavigation/PlayerCharacter" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_player_character_movement_state_changed"]
+[connection signal="MovementStateChanged" from="2DNavigation/PlayerCharacter" to="GamestateManager" method="_on_player_character_movement_state_changed"]
+[connection signal="RandomEncountered" from="2DNavigation/PlayerCharacter" to="." method="_on_player_character_random_encountered"]
 [connection signal="locationInitialised" from="2DNavigation/PlayerCharacter/2DNavigator" to="2DNavigation/PlayerCharacter" method="_on_d_navigator_location_initialised"]
 
+[editable path="Game2dUi"]
 [editable path="MainMenu"]
 [editable path="2DNavigation"]
 [editable path="2DNavigation/PlayerCharacter"]

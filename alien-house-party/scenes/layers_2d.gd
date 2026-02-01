@@ -49,7 +49,7 @@ func digest_map():
 
 func update_map(player_pos):
 	special_tiles.set_cell(locations_dict.player, -1)
-	special_tiles.set_cell(player_pos,0, thing_dict.player)
+	special_tiles.set_cell(player_pos, 0, thing_dict.player)
 	locations_dict.player = player_pos
 	
 func get_room_from_coords(coords):

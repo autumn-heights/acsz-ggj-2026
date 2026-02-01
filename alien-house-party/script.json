@@ -91,6 +91,7 @@
 			"text": "Make a weed cigarette pizza",
 			"check": 1,
 			"required_flags": ["has_cigarette"],
+  			"forbidden_flags": ["used_cigarette"], 
 			"pass": "dialogue_kitchen_pizza_weed",
 			"fail": "dialogue_kitchen_pizza_weed"
 		  }
@@ -411,6 +412,7 @@
 			"text": "Give them the weed cigarette to go away",
 			"check": 0.75,
 			"required_flags": ["has_cigarette"],
+  			"forbidden_flags": ["used_cigarette"], 
 			"pass": "dialogue_laundry_weed_SUCCEED",
 			"fail": "dialogue_laundry_weed_FAIL"
 		  }
@@ -630,6 +632,7 @@
 			"text": "...was wondering if you lost this weed cigarette?",
 			"check": 1,
 			"required_flags": ["has_cigarette"],
+  			"forbidden_flags": ["used_cigarette"], 
 			"pass": "dialogue_crush_weed",
 			"fail": "dialogue_crush_weed"
 		  }

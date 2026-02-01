@@ -2,4 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cw61mo5imcrk5" path="res://Gridmap/Gridtiles.glb" id="1_dqbk1"]
 
-[node name="Gridtiles" unique_id=1798157670 instance=ExtResource("1_dqbk1")]
+[node name="Gridtiles" unique_id=1245765977 instance=ExtResource("1_dqbk1")]
+
+[node name="Cube" parent="." index="7" unique_id=316332973]
+transform = Transform3D(0.99980104, 0.019947791, 0, -0.019947791, 0.99980104, 0, 0, 0, 1, 0, 0, -6)

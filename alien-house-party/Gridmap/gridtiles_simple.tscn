@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cq123e64515pm"]
+
+[ext_resource type="ArrayMesh" uid="uid://dlln4ac5lmg3b" path="res://Gridmap/meshes/doorway_Cube.res" id="1_sxgvg"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_n6iyc"]
+size = Vector3(2, 3, 2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sxgvg"]
+
+[node name="gridtiles_simple" type="Node3D" unique_id=535425254]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1273273350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_n6iyc")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=289447449]
+mesh = SubResource("PlaneMesh_sxgvg")
+
+[node name="DoorwayCube" type="MeshInstance3D" parent="." unique_id=2095079359]
+mesh = ExtResource("1_sxgvg")

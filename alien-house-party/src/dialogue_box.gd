@@ -11,7 +11,7 @@ signal dialogue_advance
 @export var current_display_time: float = 0;
 @export var max_line_length: int = 30; # in chars
 @export var ready_to_advance: bool = 0;
-@export var text_print_speed: float = 30.0; #in chars per second
+@export var text_print_speed: float = 45.0; #in chars per second
 
 
 var display_text_dict: Dictionary = {"is_complete": true, "text":"text"};

@@ -1,6 +1,7 @@
 {
   "dialogue_1": {
 	"type": "talking",
+	"rooms": [],
   	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "Hold up a second..."},
 		{"speaker": "PLAYER_CHARACTER", "text": "Someone's approaching!"},
@@ -30,6 +31,7 @@
   },
   "dialogue_3": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "NPC_CHARACTER", "text": "nice one bro. epic"}
 		],
@@ -37,8 +39,12 @@
 	"set_flag": "can_now_talk_to_Gressica",
 	"next": null
   },
+
+
+
 "dialogue_kitchen_pizza_intro": {
 	"type": "talking",
+	"rooms": ["kitchen"],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(Something smells good in here. Like baking bread.)"},
@@ -102,6 +108,7 @@
 	  },
 	"dialogue_kitchen_pizza_decline": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: hey that's no skin off my back"},
@@ -140,6 +147,7 @@
 	"next": null
   },"dialogue_kitchen_pizza_major_success": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "[SUCCESS] Yes, let me have a go at it."},
@@ -165,6 +173,7 @@
 	"next": null
   },"dialogue_kitchen_pizza_major_failure": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "[FAIL] Yes, let me have a go at it."},
@@ -187,11 +196,12 @@
 		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: come back in a bit when it's ready"}
 		],
-	"update_stats": {},
+	"update_stats": {"stigma": 20},
 	"set_flag": ["pizza_in_oven"],
 	"next": null
   },"dialogue_kitchen_pizza_minor_failure": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "[SUCCESS] Yes, let me have a go at it."},
@@ -208,13 +218,14 @@
 		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: come back later and you'll get to taste it"}
 		],
-	"update_stats": {},
+	"update_stats": {"stigma": 20},
 	"set_flag": ["pizza_in_oven"],
 	"next": null
   },
   
 	"dialogue_kitchen_pizza_weed": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: yooooo little buddy"},
 		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: is that a"},
@@ -232,6 +243,7 @@
 
   "dialogue_foyer_intro": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "(The door is opened! This is it!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "(My chance to blend in! To become one of the cool teens!)"},
@@ -271,6 +283,7 @@
 	  
 	"dialogue_foyer_minor_success": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "[SUCCEED] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "*does a cool nod*"},
@@ -286,6 +299,7 @@
 	
 	"dialogue_foyer_minor_failure": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "[FAIL] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "*does a cool nod*"},
@@ -296,7 +310,7 @@
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Um!! Anyway!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the party!!"}
 		],
-	"update_stats": {},
+	"update_stats": {"stigma": 20},
 	"set_flag": [],
 	"next": "dialogue_foyer_pt2"
   	},
@@ -304,6 +318,7 @@
 	
 	"dialogue_foyer_major_success": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "[SUCCEED] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "What's...."},
@@ -321,6 +336,7 @@
 	
 	"dialogue_foyer_major_failure": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "[FAIL] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "What's...."},
@@ -331,13 +347,14 @@
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Um!! Anyway!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the party!!"}
 		],
-	"update_stats": {},
+	"update_stats": {"stigma": 20},
 	"set_flag": [],
 	"next": "dialogue_foyer_pt2"
   	},
 
   "dialogue_foyer_pt2": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I was worried it wouldn't be your vibe!! You're normally so quiet!!"},
 		{"speaker": "PLAYER_CHARACTER", "text": "Yes, well. I'm quite busy with all my work..."},
@@ -387,6 +404,7 @@
 	
 	"dialogue_foyer_weed_1": {
 	"type": "talking",
+	"rooms": [],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "(I'm a cool kid now.)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "(I can smoke a weed cigarette.)"},
@@ -413,38 +431,291 @@
 	
 	"dialogue_laundry_1": {
 	"type": "talking",
+	"rooms": ["laundry"],
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER", "text": "(There's a washing machine in this room.)"},
 		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Yoooooo!"},
 		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Yooooooooooo!"},
 		{"speaker": "PLAYER_CHARACTER", "text": "(There's also two loud guys.)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "Hey guys, awesome party right??"},
-		{"speaker": "PLAYER_CHARACTER", "text": "(The sound of a washing machine is probably one of the most soothing things in the cosmos.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(The sound of a washing machine is probably one of...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(...the most soothing sensations in the cosmos.)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "(I would do anything to be alone in this room right now.)"},
 		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Yooooooooooooooooo!"},
 		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Yooooooooooooooooooooooo!"},
 		{"speaker": "PLAYER_CHARACTER", "text": "I said, awesome party, right?"},
 		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: It's basically"},
 		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: The most ripping"},
-		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: radical"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: radical"},
 		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: rambunctious"},
-		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: gatho to have happened"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: gatho to have happened"},
 		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: while Gressica's parents"},
-		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: are away on an expedition to the South Pole"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: are away on an expedition to the South Pole"},
 		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: my duuude"},
-		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: gatho to have happened"},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""},
-		{"speaker": "PLAYER_CHARACTER", "text": ""}
+		{"speaker": "PLAYER_CHARACTER", "text": "That's so cool, guys. Really great to hear."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Listen so we were in the middle of a"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: mutual psychic affirmation"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: mind meld"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: meditation moment"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: and we were wondering"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: if you wanna"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: join?"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: It's like totally"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: chill"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: either way."}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "choice_laundry_1"
+  	},
+
+	
+  "choice_laundry_1": {
+		"type": "choice",
+		"choices": [
+		  {
+			"text": "Join the meditation, and run the washer",
+			"check": 0.5,
+			"required_flags": [],
+			"pass": "dialogue_laundry_laundry_success",
+			"fail": "dialogue_laundry_laundry_failure"
+		  },
+		  {
+			"text": "Give them the weed cigarette to go away",
+			"check": 0.75,
+			"required_flags": ["has_cigarette"],
+			"pass": "dialogue_laundry_weed_success",
+			"fail": "dialogue_laundry_weed_failure"
+		  }
+		]
+	},
+
+	
+	"dialogue_laundry_laundry_success": {
+	"type": "talking",
+	"rooms": [],
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "[SUCCEED] That sounds great, guys!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Just let me do something real quick..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "I just need to set away the washing machine."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: You want to do a load of"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Gressica's laundry?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(God)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Yeah she actually asked me to set it away for her."},
+		{"speaker": "PLAYER_CHARACTER", "text": "See, it's already loaded?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Remind me to send a nice space-mail to my lucky stars)."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Hey that's pretty radical"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: That you have that kind of trust and bond!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Aaaaaaahhhhhhh....)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(That nice relaxing hum.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(The swsh, swsh, swsh as it turns.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(And the knowledge you'll have nice clean clothes afterwards.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Is anything more soothing than  the human laundry ritual?)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Surely I can handle their group meditation with this going on)."}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "dialogue_laundry_meditation"
+  	},
+
+	
+	"dialogue_laundry_laundry_failure": {
+	"type": "talking",
+	"rooms": [],
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "[FAIL] That sounds great, guys!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Just let me do something real quick..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "I just need to set away the washing machine."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: You want to use"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Gressica's washing machine?"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Did you have an accident"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: or something??"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(God)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Oh, nothing like that, I-."},
+		{"speaker": "PLAYER_CHARACTER", "text": "Um"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Nevermind, I misspoke."}
+		],
+	"update_stats": {"stigma": 20},
+	"set_flag": [],
+	"next": "dialogue_laundry_meditation"
+  	},
+
+	
+	"dialogue_laundry_meditation": {
+	"type": "talking",
+	"rooms": [],
+	"lines": [
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Sweet, then if we're all ready"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: let's hold hands"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I always forget humans have five fingers... weird)"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: and hummmm the sacred frequency"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: try to get within a few hertz if you can"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Easily done, with only one of my vocal sacs."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Now close your eyes"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: and let the aroma of essential oils wash over youu"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I thought something was bugging my olfactory tissue...)"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: and feel the warm psychic energy"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: flow through us from finger to finger"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: rushing in a big circle"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: like a..."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: like a whirlpool!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: or an, a..."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: an ouroboros"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: or a"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Cheezel."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Yeah, like those things!!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Are you feeling it?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Certainly, it's rushing through me like the force of a thousand quasars."},
+		{"speaker": "PLAYER_CHARACTER", "text": "Why I can almost see the flow of psychic energy with my tertiary ocular array."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: For the final step"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: the three of us need to"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: howl!!!!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: How fun is that?"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: It will totally bring us closer"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: as friends"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: building a permanent"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: psychic bond"},
+		{"speaker": "PLAYER_CHARACTER", "text": "I would really rather not."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: You gotta."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: You gotta."},
+		{"speaker": "PLAYER_CHARACTER", "text": "If you insist."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: AWOOOO"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: AWOOOO"},
+		{"speaker": "PLAYER_CHARACTER", "text": "AWOOO."},
+		{"speaker": "PLAYER_CHARACTER", "text": "(and with that dealt with, I was happy to move onto new opportunities.)"}
 		],
 	"update_stats": {},
 	"set_flag": [],
 	"next": null
-  	}
+  	},
+
+	
+	"dialogue_laundry_weed_success": {
+	"type": "talking",
+	"rooms": [],
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "[SUCCEED] Hey guys, that sounds great, I was just wondering if you could..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "help me with something?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "I have this weed cigarette burning a hole in my pocket."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: And you know how fiercly a "},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: weed cigarette"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: can burn, huh?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Yeah, and I was wondering if you could help me by..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "taking it off my hands?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Please don't judge my for my ray gun while I rummage in my pocket...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I know it's totally a kids' model.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(But it's been my favourite for years.)"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: ..."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: ....."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: ......."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: ........."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: GIVE it HERE!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: No YOU give it HERE"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(They wrestled each other for it... out of the room.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Lovely, now I can enjoy the washing machine in peace.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Aaaaaaahhhhhhh....)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(That nice relaxing hum.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(The swsh, swsh, swsh as it turns.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(And the knowledge you'll have nice clean clothes afterwards.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Is anything more soothing than  the human laundry ritual?)"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": null
+  	},
+
+	
+	"dialogue_laundry_weed_failure": {
+	"type": "talking",
+	"rooms": [],
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "[FAIL] Hey guys, that sounds great, I was just wondering if you could..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "help me with something?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "I have this weed cigarette burning a hole in my pocket."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: And you know how fiercly a "},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: weed cigarette"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: can burn, huh?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Yeah, and I was wondering if you could help me by..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "taking it off my hands?"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Please don't judge my for my ray gun while I rummage in my pocket...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I know it's totally a kids' model.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(But it's been my favourite for years.)"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: ..."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: ....."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: ......."},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: ........."},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: I see YOUR gambit!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: You inter LOPER!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: You're trying to TEAR"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: us APART"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: by having us FEUD"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: over this weed CIGARETTE!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: WELL!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: WE!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: WON'T!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: BE!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: HAVING!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: IT!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(THey turned up their noses, linked hands, and marched... out of the room.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Lovely, now I can enjoy the washing machine in peace.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Aaaaaaahhhhhhh....)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(That nice relaxing hum.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(The swsh, swsh, swsh as it turns.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(And the knowledge you'll have nice clean clothes afterwards.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Is anything more soothing than  the human laundry ritual?)"}
+		],
+	"update_stats": {"stigma": 20},
+	"set_flag": [],
+	"next": null
+  	},
+
+
+
+	
+	"dialogue_crush_1": {
+	"type": "talking",
+	"rooms": ["laundry", "kitchen", "anywhere"],
+	"lines": [
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Heyyyy!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I thought I'd run into you here!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Great gooblets of goo from above)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(How is she so stealthy??)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Greetings, Earthling Gressica."},
+		{"speaker": "PLAYER_CHARACTER", "text": "It brings me joy to cross paths with you in this moment."},
+		{"speaker": "PLAYER_CHARACTER", "text": "(WHY WOULD I SAY IT LIKE THAT?)"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I just wanted to know what you think of the party!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Well I..."}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "choice_crush_1"
+  	},
+
+	
+  "choice_crush_1": {
+		"type": "choice",
+		"choices": [
+		  {
+			"text": "...think it's sooo badass.",
+			"check": 0.8,
+			"required_flags": [],
+			"pass": "dialogue_crush_minor_success",
+			"fail": "dialogue_crush_minor_failure"
+		  },
+		  {
+			"text": "...am finding it a bit overwhelming.",
+			"check": 0.4,
+			"required_flags": [],
+			"pass": "dialogue_crush_major_success",
+			"fail": "dialogue_crush_major_failure"
+		  },
+		  {
+			"text": "...was wondering if you lost this weed cigarette?",
+			"check": 1,
+			"required_flags": ["has_cigarette"],
+			"pass": "dialogue_crush_weed",
+			"fail": "dialogue_crush_weed"
+		  }
+		]
+	}
 }

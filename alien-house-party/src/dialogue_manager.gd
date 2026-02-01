@@ -76,7 +76,6 @@ func trigger_next_dialogue_line():
 	if current_line_id < num_lines_in_current_script -1 :
 		current_line_id += 1
 		display_text(json_data[current_script_id]["lines"][current_line_id]["text"])
-		print(json_data[current_script_id]["lines"][current_line_id]["speaker"])
 		display_npc_portrait(json_data[current_script_id]["lines"][current_line_id]["speaker"])
 	elif json_data[current_script_id]["next"] != null:
 		dialogue_box.visible = false;

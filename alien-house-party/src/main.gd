@@ -25,7 +25,7 @@ func _on_start_the_game():
 	main_menu.visible = false;
 	map3d.digest_tiles()
 	musicPlayer.play()
-	game_2d_ui.trigger_new_dialogue("dialogue_foyer_intro")
+	game_2d_ui.trigger_new_dialogue("dialogue_crush_1")
 
 
 func _on_player_character_random_encountered() -> void:

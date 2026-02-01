@@ -13,11 +13,10 @@ script = ExtResource("1_q2ys4")
 
 [node name="NPCPortrait" type="TextureRect" parent="." unique_id=603920312]
 unique_name_in_owner = true
-visible = false
-offset_left = 548.0
-offset_top = 82.0
-offset_right = 756.0
-offset_bottom = 147.0
+offset_left = 188.0
+offset_top = 54.0
+offset_right = 654.0
+offset_bottom = 721.0
 texture = ExtResource("3_bsvmh")
 
 [node name="DialogueBox" parent="." unique_id=1567766212 instance=ExtResource("1_u85jq")]

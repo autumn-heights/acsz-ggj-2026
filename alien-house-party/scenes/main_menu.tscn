@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bouad8y0timkw" path="res://assets/ring-doorbell.png" id="1_7vrkn"]
 [ext_resource type="Script" uid="uid://dx3gb76t282gy" path="res://src/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://s4mdsnvydq78" path="res://assets/alien-house-party-logo.png" id="2_fu7sn"]
+[ext_resource type="Texture2D" uid="uid://b2bn8n8haixgq" path="res://assets/signatures.png" id="4_wu84c"]
 
 [node name="MainMenu" type="Control" unique_id=266951392]
 layout_mode = 3
@@ -26,10 +27,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -539.0
-offset_top = -303.0
-offset_right = -49.0
-offset_bottom = 6.0
+offset_left = -626.0
+offset_top = -351.0
+offset_right = -136.0
+offset_bottom = -42.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_fu7sn")
@@ -55,6 +56,14 @@ text = "Ring the doorbell"
 custom_minimum_size = Vector2(200, 100)
 layout_mode = 2
 text = "Knock on the door"
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1428437111]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 494.0
+offset_right = 341.0
+offset_bottom = 657.0
+texture = ExtResource("4_wu84c")
 
 [connection signal="pressed" from="VBoxContainer/DoorbellButton" to="." method="_on_doorbell_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/DoorknockButton" to="." method="_on_knock_button_pressed"]

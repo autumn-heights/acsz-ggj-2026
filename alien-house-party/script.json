@@ -13,17 +13,17 @@
 	"type": "choice",
 	"choices": [
 	  {
-		"text": "choice_1",
-		"check": 0.5,
-		"required_flags": ["has_cigarette"],
-		"pass": "dialogue_3",
-		"fail": "dialogue_4"
+		"text": "repeat this dialogue",
+		"check": 100,
+		"required_flags": [],
+		"pass": "dialogue_1",
+		"fail": "dialogue_1"
 	  },
 	  {
 		"text": "choice_2",
-		"check": 0.5,
+		"check": 0.99,
 		"required_flags": [],
-		"pass": "dialogue_5",
+		"pass": "dialogue_kitchen_pizza_intro",
 		"fail": "dialogue_6"
 	  }
 	]
@@ -45,8 +45,7 @@
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(Oh, I see it now. They're making homemade pizzas.)"},
 		{"speaker": "PLAYER_CHARACTER",
-		"text": "(Jessica must have prepped a bunch of dough before the party, 
-		and now everyone gets to roll their own pizza and add toppings)."},
+		"text": "(Jessica must have prepped a bunch of dough before the party, and now everyone gets to roll their own pizza and add toppings)."},
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(Oh glod. Someone's noticed me.)"},
 		{"speaker": "attendees_sprite_crushed3",

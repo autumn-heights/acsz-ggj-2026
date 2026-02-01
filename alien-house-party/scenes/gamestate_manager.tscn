@@ -6214,14 +6214,3 @@ digest = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1283088183]
 transform = Transform3D(1, 0, 0, 0, 0.7339788, 0.67917246, 0, -0.6791722, 0.7339788, 0, 18.967735, 9.443891)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
-current = true
->>>>>>> Stashed changes
-=======
-current = true
->>>>>>> Stashed changes
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1677309835]
-transform = Transform3D(0.8983728, -0.35376382, 0.26034096, 0, 0.5927163, 0.80541134, -0.43923372, -0.7235597, 0.5324802, 0, 0, 0)

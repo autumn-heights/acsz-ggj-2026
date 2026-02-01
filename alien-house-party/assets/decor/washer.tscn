@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://cqmoks106f3w1"]
 
 [ext_resource type="ArrayMesh" uid="uid://cdhcmnrog1hyg" path="res://assets/decor/meshes/Decor_Cube_007.res" id="1_bgvcy"]
+[ext_resource type="Material" uid="uid://2qsdqd8h3iji" path="res://assets/decor/Tex/new_standard_material_3d.tres" id="2_jrb6g"]
+[ext_resource type="Material" uid="uid://drp52u4qu75fj" path="res://assets/decor/Tex/2new_standard_material_3d.tres" id="3_2bmf1"]
+[ext_resource type="Material" uid="uid://myjar4401wd4" path="res://assets/decor/Tex/bbtc-1.tres" id="4_qdtu0"]
 
 [node name="Washer" type="Node3D" unique_id=527275581]
 
 [node name="DecorCube007" type="MeshInstance3D" parent="." unique_id=85202720]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_bgvcy")
+surface_material_override/0 = ExtResource("2_jrb6g")
+surface_material_override/1 = ExtResource("3_2bmf1")
+surface_material_override/2 = ExtResource("4_qdtu0")

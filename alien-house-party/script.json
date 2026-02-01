@@ -219,9 +219,8 @@
 
 		},
 		"set_flag": [
-			"pizza_in_oven"
 		],
-		"next": null
+		"next": "choice_foyer_1"
 	},
 	"dialogue_foyer_minor_SUCCEED": {
 	"type": "talking",
@@ -254,6 +253,28 @@
 	"set_flag": [],
 	"next": "dialogue_foyer_pt2"
   	},
+	
+	"choice_foyer_1": {
+		"type": "choice",
+		"choices": [
+			{
+				"text": "Do a stoic nod",
+				"check": 0.8,
+				"required_flags": [],
+  			"forbidden_flags": [], 
+				"pass": "dialogue_foyer_minor_SUCCEED",
+				"fail": "dialogue_foyer_minor_FAIL"
+			},
+			{
+				"text": "Say something awesome",
+				"check": 0.5,
+				"required_flags": [],
+  			"forbidden_flags": [], 
+				"pass": "dialogue_foyer_major_SUCCEED",
+				"fail": "dialogue_foyer_major_FAIL"
+			}
+		]
+	},
 	"dialogue_foyer_major_SUCCEED": {
 	"type": "talking",
 	"rooms": [],

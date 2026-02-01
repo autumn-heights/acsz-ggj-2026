@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://clm6r65uosfla"]
+
+[ext_resource type="ArrayMesh" uid="uid://bwxi3u0f80vxx" path="res://assets/decor/meshes/Decor_Cube_005.res" id="1_fmmwf"]
+[ext_resource type="Material" uid="uid://y2c27yiive2g" path="res://assets/decor/Tex/bbtc-11.tres" id="2_gqcdw"]
+[ext_resource type="Material" uid="uid://bvv2or3g8gb18" path="res://assets/decor/Tex/bbtc-3.tres" id="3_aisfd"]
+[ext_resource type="Material" uid="uid://oumwttqbf66v" path="res://assets/decor/Tex/bbtc-0.tres" id="4_mwfrh"]
+
+[node name="Oven" type="Node3D" unique_id=506975494]
+
+[node name="DecorCube005" type="MeshInstance3D" parent="." unique_id=1402813934]
+mesh = ExtResource("1_fmmwf")
+surface_material_override/0 = ExtResource("2_gqcdw")
+surface_material_override/1 = ExtResource("3_aisfd")
+surface_material_override/2 = ExtResource("4_mwfrh")

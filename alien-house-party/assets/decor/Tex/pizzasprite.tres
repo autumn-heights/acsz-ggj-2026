@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://n6o8ys2otli"]
+
+[ext_resource type="Texture2D" uid="uid://cvrcfnynegmio" path="res://assets/decor/Decor_pizzasprite.png" id="1_5qb02"]
+
+[resource]
+resource_name = "pizzasprite"
+albedo_texture = ExtResource("1_5qb02")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

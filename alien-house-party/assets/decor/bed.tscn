@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://mkt0h2cvj5gm"]
+
+[ext_resource type="ArrayMesh" uid="uid://co3gx5ayilq0t" path="res://assets/decor/meshes/Decor_Cube_002.res" id="1_nvxc0"]
+[ext_resource type="Material" uid="uid://bvv2or3g8gb18" path="res://assets/decor/Tex/bbtc-3.tres" id="2_pvxkv"]
+[ext_resource type="Material" uid="uid://myjar4401wd4" path="res://assets/decor/Tex/bbtc-1.tres" id="3_4ghq8"]
+[ext_resource type="Material" uid="uid://oumwttqbf66v" path="res://assets/decor/Tex/bbtc-0.tres" id="4_hqlsv"]
+
+[node name="bed" type="Node3D" unique_id=2002356751]
+
+[node name="DecorCube002" type="MeshInstance3D" parent="." unique_id=1539044752]
+mesh = ExtResource("1_nvxc0")
+surface_material_override/0 = ExtResource("2_pvxkv")
+surface_material_override/1 = ExtResource("3_4ghq8")
+surface_material_override/2 = ExtResource("4_hqlsv")

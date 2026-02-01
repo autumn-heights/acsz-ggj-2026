@@ -4,18 +4,18 @@
 [ext_resource type="Script" uid="uid://myi27hyy6ijq" path="res://src/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://d0geo03l3ca38" path="res://scenes/main_menu.tscn" id="2_0wfyh"]
 [ext_resource type="AudioStream" uid="uid://buapjuera4jaf" path="res://AlienDoorbell.ogg" id="4_85g3d"]
-[ext_resource type="PackedScene" uid="uid://bs1hrl1cwc45r" path="res://scenes/2d_navigation.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" path="res://scenes/2d_navigation.tscn" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://cjw1vug218dpf" path="res://AlienKnockogg.ogg" id="4_tipki"]
 [ext_resource type="PackedScene" uid="uid://c61gxnc2itbo3" path="res://Gridmap/gridtiles.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cwpfw20bvixbl" path="res://scenes/gamestate_manager.tscn" id="6_tefeu"]
 [ext_resource type="AudioStream" uid="uid://cutnasw68r35h" path="res://GGJ2026 Jersey Alien NoTail.ogg" id="7_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://bevhylkgndyba" path="res://assets/decor/bench_straight.tscn" id="9_dp3eg"]
+[ext_resource type="PackedScene" path="res://assets/decor/bench_straight.tscn" id="9_dp3eg"]
 [ext_resource type="PackedScene" uid="uid://mkt0h2cvj5gm" path="res://assets/decor/bed.tscn" id="10_0ld40"]
 [ext_resource type="PackedScene" uid="uid://d4ji3wwfy5bxp" path="res://assets/decor/coffee_table.tscn" id="11_gqmmt"]
 [ext_resource type="PackedScene" uid="uid://jdwy3kvu83wl" path="res://assets/decor/fridge.tscn" id="12_yc10j"]
-[ext_resource type="PackedScene" uid="uid://b2h7pvh178cxw" path="res://assets/decor/cnr_bench.tscn" id="13_jscy8"]
-[ext_resource type="PackedScene" uid="uid://clm6r65uosfla" path="res://assets/decor/oven.tscn" id="14_pm3ni"]
-[ext_resource type="PackedScene" uid="uid://cqmoks106f3w1" path="res://assets/decor/washer.tscn" id="15_y6deb"]
+[ext_resource type="PackedScene" path="res://assets/decor/cnr_bench.tscn" id="13_jscy8"]
+[ext_resource type="PackedScene" path="res://assets/decor/oven.tscn" id="14_pm3ni"]
+[ext_resource type="PackedScene" path="res://assets/decor/washer.tscn" id="15_y6deb"]
 [ext_resource type="PackedScene" uid="uid://b8afht7p1nqo5" path="res://assets/decor/sink.tscn" id="16_og1vs"]
 [ext_resource type="PackedScene" uid="uid://sglyilv0tpn0" path="res://assets/decor/pizza.tscn" id="17_2wyq8"]
 
@@ -52,6 +52,7 @@ visible = false
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1163514908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6471682, 10.385622, 13.793895)
+visible = false
 omni_range = 43.56738
 
 [node name="GamestateManager" parent="." unique_id=290236753 instance=ExtResource("6_tefeu")]
@@ -112,8 +113,6 @@ transform = Transform3D(0.9999713, -0.0037080536, 0.006608506, 0.003724857, 0.99
 [node name="MusicStream" type="AudioStreamPlayer" parent="." unique_id=630698904]
 stream = ExtResource("7_o6xl0")
 
-[connection signal="MovementStateChanged" from="2DNavigation/PlayerCharacter" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_player_character_movement_state_changed"]
-[connection signal="MovementStateChanged" from="2DNavigation/PlayerCharacter" to="GamestateManager" method="_on_player_character_movement_state_changed"]
 [connection signal="locationInitialised" from="2DNavigation/PlayerCharacter/2DNavigator" to="2DNavigation/PlayerCharacter" method="_on_d_navigator_location_initialised"]
 
 [editable path="MainMenu"]

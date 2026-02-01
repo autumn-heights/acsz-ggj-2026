@@ -6,6 +6,7 @@ extends Control
 @onready var map2d = $GamestateManager/Layers2D
 @onready var map3d = $GamestateManager/Map3d
 @onready var musicPlayer = $MusicStream
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_2d_ui.visible = false;

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6bd84vomsexr"
-path="res://.godot/imported/attendees_sprite_crushed.png-a69dcf0a61b4308d971d9a247634fce5.ctex"
+uid="uid://bc2ivaqgq5bof"
+path="res://.godot/imported/turn-arrow.png-7fb63f365d4c000f35a16854e725942c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://attendees_sprite_crushed.png"
-dest_files=["res://.godot/imported/attendees_sprite_crushed.png-a69dcf0a61b4308d971d9a247634fce5.ctex"]
+source_file="res://assets/turn-arrow.png"
+dest_files=["res://.godot/imported/turn-arrow.png-7fb63f365d4c000f35a16854e725942c.ctex"]
 
 [params]
 

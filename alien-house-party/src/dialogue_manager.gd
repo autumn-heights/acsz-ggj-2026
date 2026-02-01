@@ -78,7 +78,7 @@ func trigger_next_dialogue_line():
 		display_text(json_data[current_script_id]["lines"][current_line_id]["text"])
 		print(json_data[current_script_id]["lines"][current_line_id]["speaker"])
 		display_npc_portrait(json_data[current_script_id]["lines"][current_line_id]["speaker"])
-	elif json_data[current_script_id]["next"] != null:
+ 	elif json_data[current_script_id]["next"] != null:
 		dialogue_box.visible = false;
 		if "set_flag" in json_data[current_script_id]:
 			print("setting flag: ", json_data[current_script_id]["set_flag"])

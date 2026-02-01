@@ -1,15 +1,10 @@
 extends Node
-<<<<<<< Updated upstream
-
-
-=======
 enum Gamestates {IDLE, MOVING, DIALOGUE}
 enum RoomStates {KITCHEN, FOYER, RUMPUS, BEDROOM, BATHROOM, DINING, LAUNDRY}
 var current_room : RoomStates
 var current_state : Gamestates
 @onready var map2d = $Layers2D
 @onready var map3d = $Map3d
->>>>>>> Stashed changes
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

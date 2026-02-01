@@ -6215,6 +6215,10 @@ digest = true
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1283088183]
 transform = Transform3D(1, 0, 0, 0, 0.7339788, 0.67917246, 0, -0.6791722, 0.7339788, 0, 18.967735, 9.443891)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+current = true
+>>>>>>> Stashed changes
 =======
 current = true
 >>>>>>> Stashed changes

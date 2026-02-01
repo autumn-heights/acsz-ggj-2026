@@ -1,11 +1,13 @@
 extends Node2D
 
-@onready var tiles: TileMapLayer = $"../../TileLayer1"
-@onready var playerCharacter: Node3D = $".."
-
+@onready var mapLayers = $"../../../GamestateManager/Layers2D"
+@onready var mapGrid: GridMap = $"../../../GamestateManager/Map3d/GridMap"
 # SIGNALS.
 signal direction_changed(direction)
 signal character_moved(newX, newY)
+signal locationInitialised(startingX, startingY)
+
+var canMove: bool = true
 
 # NAVIGATION/DIRECTION Variables.
 var direction = Global.EDirection.NORTH
@@ -15,7 +17,17 @@ var tileY: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	#Find spawn location on 2d map, set tile location to there, then tell the 3d PlayerCharacter
+	# to go to the equivalent space on the 3d gridmap
+	var specialTiles: TileMapLayer = mapLayers.special_tiles
+	var specialCells: Array[Vector2i] = specialTiles.get_used_cells()
+	for cell in specialCells:
+		var cellData: TileData = specialTiles.get_cell_tile_data(cell)
+		if specialTiles.get_cell_atlas_coords(cell) == Vector2i(0, 0):
+			tileX = cell.x
+			tileY = cell.y
+			break
+	locationInitialised.emit(XToWorldSpace(), YToWorldSpace())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,7 +35,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _input(event):
-	if playerCharacter.isMoving == false:
+	if canMove:
 		if event.is_action_pressed("up"):
 			navigationUp()
 		#if event.is_action_pressed("down"): No backwards movement for now.
@@ -49,8 +61,8 @@ func navigationUp():
 	
 	var currentTile = Vector2i(tileX, tileY)
 	var targetTile = Vector2i(newTileX, newTileY)
-	
-	var targetTileData: TileData = tiles.get_cell_tile_data(targetTile)
+	var targetTileData: TileData = mapLayers.floors.get_cell_tile_data(targetTile)
+	#var targetTileData: TileData = tiles.get_cell_tile_data(targetTile)
 	# Check if the tile we're attempting to move to is walkable.
 	if targetTileData == null:
 		print("Attempted movement to non walkable tile, returning.")
@@ -61,7 +73,7 @@ func navigationUp():
 	tileX = newTileX
 	tileY = newTileY
 	character_moved.emit(XToWorldSpace(), YToWorldSpace())
-	
+
 func navigationDown():
 	# Attempt to move backwards.
 	match direction:
@@ -104,7 +116,19 @@ func navigationRight():
 # These functions should translate the tile they are on to world space coordinates.
 # Right now it seems each tile is just 2 units apart.
 func XToWorldSpace() -> int:
-	return tileX * 2
+	var localCoords = mapGrid.map_to_local(Vector3i(tileX, 0, -tileY))
+	var globalCoords = mapGrid.to_global(localCoords)
+	return globalCoords.x
 
 func YToWorldSpace() -> int:
-	return tileY * 2
+	var localCoords = mapGrid.map_to_local(Vector3i(tileX, 0, -tileY))
+	var globalCoords = mapGrid.to_global(localCoords)
+	return -globalCoords.z
+
+
+func _on_player_character_movement_state_changed(state: Variant) -> void:
+	canMove = !state
+	if canMove:
+		print("Can now move")
+	else:
+		print("Can no longer move")

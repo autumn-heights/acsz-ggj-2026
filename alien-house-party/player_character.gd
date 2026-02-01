@@ -1,8 +1,9 @@
 extends Node3D
 
-var characterHeight: float = 0 # The character's height.
+var characterHeight: float = 3 # The character's height.
 
 var isMoving: bool = false
+signal MovementStateChanged(state)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,10 +18,11 @@ func OnCharacterMoved(newX: Variant, newY: Variant) -> void:
 	# this function just uses those values to physically move the character.
 	#position = Vector3(newX, characterHeight, newY) # Translating from 2d to 3d, we use the 2d Y as 3d Z.
 	isMoving = true
+	MovementStateChanged.emit(isMoving)
 	var tweenStep: Tween = create_tween()
+	tweenStep.tween_property(self, "position",  Vector3((position.x + ((newX - position.x)/2)), (characterHeight + 0.5), (position.z + ((newY - position.z)/2))), 0.2)
+	tweenStep.tween_property(self, "position",  Vector3(newX, characterHeight, newY), 0.2)
 	tweenStep.tween_callback(OnFinishedMove)
-	tweenStep.tween_property(self, "position",  Vector3((position.x + ((newX - position.x)/2)), (characterHeight + 0.5), (position.z + ((newY - position.z)/2))), 0.5)
-	tweenStep.tween_property(self, "position",  Vector3(newX, characterHeight, newY), 0.5)
 	
 	# Lets print the new position out too, just so we know :)
 	print(newX, newY)
@@ -43,10 +45,16 @@ func OnDirectionChanged(direction: Variant) -> void:
 			newDirection = -270
 	
 	isMoving = true
+	MovementStateChanged.emit(isMoving)
 	var tweenTurn: Tween = create_tween()
-	tweenTurn.tween_callback(OnFinishedMove)
 	var newRotation = lerp_angle(rotation.y, deg_to_rad(newDirection), 1)
-	tweenTurn.tween_property(self,"rotation:y", newRotation, 0.5)
+	tweenTurn.tween_property(self,"rotation:y", newRotation, 0.2)
+	tweenTurn.tween_callback(OnFinishedMove)
 
 func OnFinishedMove():
 	isMoving = false
+	MovementStateChanged.emit(isMoving)
+
+
+func _on_d_navigator_location_initialised(startingX: Variant, startingY: Variant) -> void:
+	position = Vector3(startingX, characterHeight, startingY)

@@ -1,5 +1,9 @@
 extends Node
 
+signal pressed_go_straight
+signal pressed_go_left
+signal pressed_go_right
+
 var json_data: Dictionary
 var console_label: Label
 var choice_container: VBoxContainer
@@ -8,10 +12,16 @@ var current_script_id: String
 var current_line_id: int = -1;
 var num_lines_in_current_script: int = -1;
 
+var movement_cooldown = 0;
+var movement_cooldown_max = 0.5; # in seconds
+
 @onready var dialogue_box = %DialogueBox
 @onready var npc_portrait = %NPCPortrait
+@onready var nav_buttons = %NavigationButtons
 
 const npc_textures = {
+	"PLAYER_CHARACTER":
+		preload("res://assets/attendees/aftonsparv.png"),
 	"attendees_sprite_crushed1.png":
 		preload("res://assets/attendees/attendees_sprite_crushed1.png"),
 	"attendees_sprite_crushed2.png":
@@ -43,39 +53,56 @@ func load_json_file(path: String) -> void:
 
 func trigger_new_dialogue(script_id: String):
 	
+	if script_id != null and not script_id in json_data.keys():
+		assert(false) # incorrect script_id triggered!
+	
 	if json_data[script_id]["type"] == "talking":
 		current_script_id = script_id;
 		current_line_id = -1
 		dialogue_box.visible = true;
+		nav_buttons.visible = false;
 		num_lines_in_current_script = len(json_data[script_id]["lines"])
-		try_next_dialogue_line()
+		trigger_next_dialogue_line()
 	
 	elif json_data[script_id]["type"] == "choice":
-		pass
-		# TODO: display the choice options on the screen
+		dialogue_box.visible = false;
+		nav_buttons.visible = false;
+		current_script_id = script_id;
+		display_choice(script_id)
 
-func try_next_dialogue_line():
+func trigger_next_dialogue_line():
 	# if there's another line of dialogue to display, then do that
 	# if there's not another line of dialogue to display, then close the dialogue box
 	if current_line_id < num_lines_in_current_script -1 :
 		current_line_id += 1
 		display_text(json_data[current_script_id]["lines"][current_line_id]["text"])
+		print(json_data[current_script_id]["lines"][current_line_id]["speaker"])
+		display_npc_portrait(json_data[current_script_id]["lines"][current_line_id]["speaker"])
+	elif json_data[current_script_id]["next"] != null:
+		dialogue_box.visible = false;
+		trigger_new_dialogue(json_data[current_script_id]["next"])
 	else:
+		dialogue_box.visible = false;
+		nav_buttons.visible = true;
 		pass
-		# TODO: Handle end of dialogue, trigger next step per jsonscript
 
 func _on_advance_dialogue():
 	# FUNCTION THAT GETS TRIGGERED WHEN THE PLAYER ADVANCES THE DIALOGUE BOX
-	try_next_dialogue_line()
+	trigger_next_dialogue_line()
 
 
-func display_text(data: String):
-	dialogue_box.set_new_text(data);
+func display_text(text: String):
+	dialogue_box.set_new_text(text);
 	
-func display_npc_portrait(data: String):
-	npc_portrait.texture = npc_textures[data]
+func display_npc_portrait(npc_texture_key: String):
+	if npc_texture_key in npc_textures.keys():
+		npc_portrait.visible = true
+		npc_portrait.texture = npc_textures[npc_texture_key]
+	else:
+		npc_portrait.visible = false
 
-func display_choice(data):
+func display_choice(script_id):
+	var data = json_data[script_id]
 	for child in choice_container.get_children():
 		child.queue_free()
 	
@@ -130,8 +157,31 @@ func _on_choice_pressed(choice_data):
 
 
 func _process(delta: float) -> void:
+	movement_cooldown -= delta;
+	if Input.is_action_just_pressed("up"):
+		_try_send_movement_signal(pressed_go_straight)
+	elif Input.is_action_just_pressed("left"):
+		_try_send_movement_signal(pressed_go_left)
+	elif Input.is_action_just_pressed("right"):
+		_try_send_movement_signal(pressed_go_right)
+	
 	pass
 
 
+func _try_send_movement_signal(my_signal):
+	if movement_cooldown <= 0 and nav_buttons.visible:
+		my_signal.emit()
+		movement_cooldown = movement_cooldown_max
+		print(my_signal)
+
 func _on_debug_convo_button_pressed() -> void:
 	trigger_new_dialogue("dialogue_1");
+
+func _on_go_left_button_pressed() -> void:
+	_try_send_movement_signal(pressed_go_left)
+
+func _on_go_straight_button_pressed() -> void:
+	_try_send_movement_signal(pressed_go_straight)
+
+func _on_go_right_button_pressed() -> void:
+	_try_send_movement_signal(pressed_go_right)

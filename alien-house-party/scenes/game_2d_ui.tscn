@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://b0c8bps8x60hk" path="res://scenes/dialogue_box.tscn" id="1_u85jq"]
 [ext_resource type="Texture2D" uid="uid://ds8cltu414a3d" path="res://assets/clipboard-png-download.png" id="2_qyhqg"]
 [ext_resource type="Texture2D" uid="uid://fksaf8aglqpw" path="res://assets/attendees/attendees_sprite_crushed1.png" id="3_bsvmh"]
+[ext_resource type="Texture2D" uid="uid://b7crw4cre511l" path="res://assets/turn-arrow-noeyes.png" id="5_irgy7"]
+[ext_resource type="Texture2D" uid="uid://bddh3tvpt6bg7" path="res://assets/straight-arrow-noeyes.png" id="5_mvv4m"]
+[ext_resource type="Texture2D" uid="uid://cg6r8hqc2sgq4" path="res://assets/straight-arrow.png" id="6_ahmgt"]
+[ext_resource type="Texture2D" uid="uid://bc2ivaqgq5bof" path="res://assets/turn-arrow.png" id="6_i774s"]
 
 [node name="Game2DUI" type="Node2D" unique_id=1488848559]
 script = ExtResource("1_q2ys4")
@@ -54,4 +58,32 @@ unique_name_in_owner = true
 visible = false
 position = Vector2(50, 379)
 
+[node name="NavigationButtons" type="HBoxContainer" parent="." unique_id=1115661204]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 50)
+offset_left = 350.0
+offset_top = 500.0
+offset_right = 508.0
+offset_bottom = 550.0
+
+[node name="GoLeftButton" type="TextureButton" parent="NavigationButtons" unique_id=1542548537]
+layout_mode = 2
+texture_normal = ExtResource("5_irgy7")
+texture_hover = ExtResource("6_i774s")
+flip_h = true
+
+[node name="GoStraightButton" type="TextureButton" parent="NavigationButtons" unique_id=874048295]
+layout_mode = 2
+texture_normal = ExtResource("5_mvv4m")
+texture_hover = ExtResource("6_ahmgt")
+
+[node name="GoRightButton" type="TextureButton" parent="NavigationButtons" unique_id=1369589683]
+layout_mode = 2
+texture_normal = ExtResource("5_irgy7")
+texture_hover = ExtResource("6_i774s")
+
 [connection signal="pressed" from="DebugConvoButton" to="." method="_on_debug_convo_button_pressed"]
+[connection signal="pressed" from="NavigationButtons/GoLeftButton" to="." method="_on_go_left_button_pressed"]
+[connection signal="pressed" from="NavigationButtons/GoStraightButton" to="." method="_on_go_straight_button_pressed"]
+[connection signal="pressed" from="NavigationButtons/GoRightButton" to="." method="_on_go_right_button_pressed"]

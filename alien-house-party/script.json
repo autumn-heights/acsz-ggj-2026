@@ -34,7 +34,7 @@
 		{"speaker": "NPC_CHARACTER", "text": "nice one bro. epic"}
 		],
 	"update_stats": { "social_mask": 5 },
-	"set_flag": "can_now_talk_to_jessica",
+	"set_flag": "can_now_talk_to_Gressica",
 	"next": null
   },
 "dialogue_kitchen_pizza_intro": {
@@ -45,22 +45,22 @@
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(Oh, I see it now. They're making homemade pizzas.)"},
 		{"speaker": "PLAYER_CHARACTER",
-		"text": "(Jessica must have prepped a bunch of dough before the party, and now everyone gets to roll their own pizza and add toppings)."},
+		"text": "(Gressica must have prepped a bunch of dough before the party, and now everyone gets to roll their own pizza and add toppings)."},
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(Oh glod. Someone's noticed me.)"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: OH HEYYY if it isnt"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: little buddy :)"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: hey i just finished making my"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: flavour blasted"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: toppings unlimited"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: cheremy special two thousand and ooooooooone ;)"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: so there's a spare cutting board and roller here. wanna make your own?"}
 		],
 	"update_stats": {},
@@ -103,11 +103,11 @@
 	"dialogue_kitchen_pizza_decline": {
 	"type": "talking",
 	"lines": [
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: hey that's no skin off my back"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: just dont go trying to pinch any of the cheremy special okay"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: seeya later little dude :)"},
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(That guy stresses me out.)"}
@@ -119,7 +119,7 @@
 	"type": "talking",
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER",
-		"text": "Yes, let me have a go at it."},
+		"text": "[SUCCESS] Yes, let me have a go at it."},
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(What do humans put on pizzas....???)"},
 		{"speaker": "PLAYER_CHARACTER",
@@ -128,30 +128,231 @@
 		"text": "(The tomato puree and the cheese are mostly used, so let's go with those.)"},
 		{"speaker": "PLAYER_CHARACTER",
 		"text": "(The puree reminds me of the delicious and useful goo I enjoyed back home.)"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: hey little dude, you just making a margherita?"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: classic for a reason (finger based gesture). give it some time and it'll be ready later"},
-		{"speaker": "attendees_sprite_crushed3",
+		{"speaker": "attendees_sprite_crushed3.png",
 		"text": "cheremy: trust the proooocceesssss"}
 		],
 	"update_stats": {},
-	"set_flag": ["made_a_good_pizza"],
+	"set_flag": ["pizza_in_oven"],
 	"next": null
   },"dialogue_kitchen_pizza_major_success": {
 	"type": "talking",
 	"lines": [
 		{"speaker": "PLAYER_CHARACTER",
-		"text": "Yes, let me have a go at it."},
+		"text": "[SUCCESS] Yes, let me have a go at it."},
 		{"speaker": "PLAYER_CHARACTER",
-		"text": "(The whole kitchen is an array of human food components of varying familiarity.)"},
+		"text": "(The kitchen is scattered with food components of varying familiarity.)"},
 		{"speaker": "PLAYER_CHARACTER",
-		"text": "You know some of these are absolute no-nos to your palate, but you also know humans tend to react negatively"},
-		{"speaker": "attendees_sprite_crushed3",
-		"text": "cheremy: trust the proooocceesssss"}
+		"text": "(Some of these are absolutely intolerable to my refined palate...)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(... but humans tend to react negatively when I try to explain this.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "Let me try to recreate my great brood-father's classic pizza formulation."},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "A little fungus matter.... a little purple pepperoni......"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: little buddy that looks raaaaaad :)"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: let's chuck that little monster in the oven"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: and when it's done you need to let me steal a slice :O"}
 		],
 	"update_stats": {},
-	"set_flag": ["made_a_good_pizza"],
+	"set_flag": ["pizza_in_oven"],
+	"next": null
+  },"dialogue_kitchen_pizza_major_failure": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "[FAIL] Yes, let me have a go at it."},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(The kitchen is scattered with food components of varying familiarity.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(Some of these are absolutely intolerable to my refined palate...)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(... but humans tend to react negatively when I try to explain this.)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(No time to falter! Let me follow my heart...)"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: uhh little buddy"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: :)"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: listen i love what you're going for but uh"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: i don't know if Gressica's parents will appreciate you using up all the dish soap"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: come back in a bit when it's ready"}
+		],
+	"update_stats": {},
+	"set_flag": ["pizza_in_oven"],
+	"next": null
+  },"dialogue_kitchen_pizza_minor_failure": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "[SUCCESS] Yes, let me have a go at it."},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(What do humans put on pizzas....???)"},
+		{"speaker": "PLAYER_CHARACTER",
+		"text": "(I've seen pizzas in human cartoons... there's something red, and something yellow...)"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: hey little buddy :)"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: you sure you don't wanna put anything other than cheese and tomato on"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: well everyone's got their own tastes"},
+		{"speaker": "attendees_sprite_crushed3.png",
+		"text": "cheremy: come back later and you'll get to taste it"}
+		],
+	"update_stats": {},
+	"set_flag": ["pizza_in_oven"],
 	"next": null
   },
+  
+	"dialogue_kitchen_pizza_weed": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: yooooo little buddy"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: is that a"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: weed cigarette :))"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: i don't think i can think of something more radical to put on a pizza"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: hell yeeeaaah"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: chuck that little monster in there"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: this pizza is gonna be bangin"},
+		{"speaker": "attendees_sprite_crushed3.png", "text": "cheremy: come back in a bit to try it"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": null
+  },
+
+  "dialogue_foyer_intro": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(The door is opened! This is it!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(My chance to blend in! To become one of the cool teens!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I couldn't believe it when I received an invitation to a house party...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(And from my crush, of all people!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I hear Gressica's parents are super strict. But they're out of town for the whole month...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(On some kind of expedition to the South Pole.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(So they won't have any contact with home at all for weeks.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Naturally, Gressica has invited everyone she knows to her house on the first day.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I can't wait to get to spend time with awesome and cool teens!!)"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "..."},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Oh glorg. How long has she been starting at me.)"}
+		],
+	"update_stats": {},
+	"set_flag": [""],
+	"next": "choice_foyer"
+  },
+	"choice_foyer": {
+		"type": "choice",
+		"choices": [
+		  {
+			"text": "Nod stoically",
+			"check": 0.8,
+			"required_flags": [],
+			"pass": "dialogue_foyer_minor_success",
+			"fail": "dialogue_foyer_minor_failure"
+		  },
+		  {
+			"text": "Impress her",
+			"check": 0.8,
+			"required_flags": [],
+			"pass": "dialogue_foyer_major_success",
+			"fail": "dialogue_foyer_major_failure"
+		  }
+		]
+	  },
+	  
+	"dialogue_foyer_minor_success": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "*does a cool nod*"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Hey!! I'm so glad you made it!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the partay!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Teehee!!"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "dialogue_foyer_pt2"
+  	},
+
+	
+	"dialogue_foyer_minor_failure": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "*does a cool nod*"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Hey!! Are you okay!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: You've been standing there a while!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Ah! Um! Yes I'm well!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Just taking it all in! Your cool foyer!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Um!! Anyway!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the party!!"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "dialogue_foyer_pt2"
+  	},
+
+	
+	"dialogue_foyer_major_success": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "What's...."},
+		{"speaker": "PLAYER_CHARACTER", "text": "What's up my hep dolls and rizz cats? Looks like this party is ready to shift from groovy to groovier, if you catch my meaning"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Woah!! I have no idea what that means!! But it sounds awesome!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Teehee!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the party!!"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "dialogue_foyer_pt2"
+  	},
+
+	
+	
+	"dialogue_foyer_major_failure": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "What's...."},
+		{"speaker": "PLAYER_CHARACTER", "text": "What's up my hep dolls and rizz cats? Looks like this party is ready to shift from groovy to groovier, if you catch my meaning"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Woah!! I have no idea what that means!! Are you okay!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Ah! Um! Yes I'm fine I swear that's a normal and cool thing to say"},
+		{"speaker": "PLAYER_CHARACTER", "text": "...somewhere in the universe"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Um!! Anyway!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the party!!"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": "dialogue_foyer_pt2"
+  	},
+
+  "dialogue_foyer_pt2": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I was worried it wouldn't be your vibe!! You're normally so quiet!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Yes, well. I'm quite busy with all my work..."},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: You're always talking about experiments!! And rocket science!! And goo!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I want you to do something for me tonight, okay!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Promise me you'll take a load off!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Try to let loose!! And relax!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "I..... can try that."},
+		{"speaker": "PLAYER_CHARACTER", "text": "No promises that I won't talk about goo, though. It's one of my favourite things."},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I guess I can compromise!! As long as you promise one more thing!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: No telling my parents!! Okay!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "You got it!"}
+		],
+	"update_stats": {},
+	"set_flag": [],
+	"next": null
+  }
 }

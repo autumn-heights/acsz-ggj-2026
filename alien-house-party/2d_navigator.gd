@@ -18,6 +18,8 @@ var tileY: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
+func lateReady() -> void:
 	#Find spawn location on 2d map, set tile location to there, then tell the 3d PlayerCharacter
 	# to go to the equivalent space on the 3d gridmap
 	var specialTiles: TileMapLayer = mapLayers.special_tiles
@@ -29,7 +31,7 @@ func _ready() -> void:
 			tileY = cell.y
 			break
 	locationInitialised.emit(XToWorldSpace(), YToWorldSpace())
-
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -63,18 +65,21 @@ func navigationUp():
 	var currentTile = Vector2i(tileX, tileY)
 	var targetTile = Vector2i(newTileX, newTileY)
 	var targetTileData: TileData = mapLayers.floors.get_cell_tile_data(targetTile)
-	var specialTileAtlas: Vector2i = mapLayers.special_tiles.get_cell_atlas_coords(targetTile)
+	#var specialTileAtlas: Vector2i = mapLayers.special_tiles.get_cell_atlas_coords(targetTile)
+	var specialTile: TileData = mapLayers.special_tiles.get_cell_tile_data(targetTile)
 	#var targetTileData: TileData = tiles.get_cell_tile_data(targetTile)
 	# Check if the tile we're attempting to move to is walkable.
 	if targetTileData == null:
 		print("Attempted movement to non walkable tile, returning.")
 		return
-	elif specialTileAtlas == Vector2i():
-		print("Attempted movement to non walkable tile, returning.")
-		return
-	elif specialTileAtlas == Vector2i():
-		activatedQuest.emit(newTileX, newTileY)
-		print("Attempted movement to a quest tile do something here")
+	elif specialTile != null: # This is a special tile.
+		print("Attempted movement to special tile")
+		var specialTileAtlas: Vector2i = mapLayers.special_tiles.get_cell_atlas_coords(targetTile)
+		if specialTileAtlas == Vector2i(1, 0):
+			# Is Quest
+			activatedQuest.emit(newTileX, newTileY)
+			print("Attempted movement to a quest tile do something here")
+
 	# If it is walkable, we update our tile position here, and emit to tell the player character
 	# the new worldspace coordinates it should go to.
 	tileX = newTileX

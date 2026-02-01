@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dwbtc7q23qogs"]
+
+[ext_resource type="Texture2D" uid="uid://cea80qjpu2c3j" path="res://assets/decor/Decor_edit_Dare_Birsa,_Med_in_mleko,_2017,_240×160_cm.png" id="1_s082l"]
+
+[resource]
+resource_name = "edit_Dare_Birsa,_Med_in_mleko,_2017,_240×160_cm.png"
+albedo_texture = ExtResource("1_s082l")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

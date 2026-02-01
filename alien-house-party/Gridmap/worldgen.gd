@@ -61,8 +61,9 @@ func place_cells(tmap_layer:TileMapLayer, tile:int):
 		var ntile = tile
 		var a_cord = tmap_layer.get_cell_atlas_coords(cell)
 		if a_cord == Vector2i(5, 5) || a_cord == Vector2i(6, 5):
-			if a_cord == Vector2i(5, 5):
-				o = 22
-			ntile = meshlist.door
+			ntile = meshlist.floor
+			#if a_cord == Vector2i(5, 5):
+			#	o = 22
+			#ntile = meshlist.door
 		var pos = Vector3i(cell.x, 0, cell.y)
 		gridmap.set_cell_item(pos, ntile, o)

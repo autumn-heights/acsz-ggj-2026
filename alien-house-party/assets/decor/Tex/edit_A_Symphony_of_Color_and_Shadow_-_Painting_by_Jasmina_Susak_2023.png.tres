@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cb38ysc3iahpw"]
+
+[ext_resource type="Texture2D" uid="uid://byr5ajufh4pi1" path="res://assets/decor/Decor_edit_A_Symphony_of_Color_and_Shadow_-_Painting_by_Jasmina_Susak_2023.png" id="1_syrhe"]
+
+[resource]
+resource_name = "edit_A_Symphony_of_Color_and_Shadow_-_Painting_by_Jasmina_Susak_2023.png"
+albedo_texture = ExtResource("1_syrhe")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

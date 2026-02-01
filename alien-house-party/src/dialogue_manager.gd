@@ -12,8 +12,8 @@ var current_script_id: String
 var current_line_id: int = -1;
 var num_lines_in_current_script: int = -1;
 
-var movement_cooldown = 0;
-var movement_cooldown_max = 0.5; # in seconds
+var movement_cooldown: int = 0;
+var movement_cooldown_max: float = 0.5; # in seconds
 
 @onready var dialogue_box = %DialogueBox
 @onready var npc_portrait = %NPCPortrait
@@ -50,6 +50,23 @@ func load_json_file(path: String) -> void:
 	var json_string: String = FileAccess.get_file_as_string(path)
 	var parse_result = JSON.parse_string(json_string) 
 	json_data = parse_result
+
+func get_available_dialogues_for_room(room_name: String) -> Array[String]:
+	var available: Array[String] = []
+	for dialogue_id in json_data.keys():
+		if "rooms" in json_data[dialogue_id]:
+			if (room_name in json_data[dialogue_id]["rooms"] 
+			and dialogue_id not in Global.completed_dialogues):
+				available.append(dialogue_id)
+	return available
+
+func try_select_dialogue(room_name: String) -> bool:
+	var available: Array[String] = get_available_dialogues_for_room(room_name)
+	if available.size() > 0:
+		var chosen = available.pick_random()
+		trigger_new_dialogue(chosen)
+		return true
+	return false # we're done here - notify player??
 
 func trigger_new_dialogue(script_id: String):
 	
@@ -92,11 +109,12 @@ func trigger_next_dialogue_line():
 	else:
 		dialogue_box.visible = false;
 		nav_buttons.visible = true;
-		pass
+		Global.completed_dialogues.append(current_script_id)
 
 func _on_advance_dialogue():
 	# FUNCTION THAT GETS TRIGGERED WHEN THE PLAYER ADVANCES THE DIALOGUE BOX
-	trigger_next_dialogue_line()
+	if dialogue_box.visible:
+		trigger_next_dialogue_line()
 
 
 func display_text(text: String):
@@ -116,10 +134,10 @@ func display_choice(script_id):
 	
 	for i in range(data["choices"].size()):
 		var choice = data["choices"][i]
-		var button = Button.new()
-		var chance_percent = int(choice["check"] * 100)
+		var button: Button = Button.new()
+		var chance_percent: int = int(choice["check"] * 100)
 		
-		var has_required_flags = true
+		var has_required_flags: bool = true
 		if "required_flags" in choice:
 			for flag in choice["required_flags"]:
 				if not Global.has_flag(flag):
@@ -148,7 +166,7 @@ func _on_choice_pressed(choice_data):
 	#clear buttons
 	for child in choice_container.get_children():
 		child.queue_free()
-	var roll = randf()
+	var roll: float = randf()
 	var passed = roll < choice_data["check"]
 	var next_dialogue = choice_data["pass"] if passed else choice_data["fail"]
 	trigger_new_dialogue(next_dialogue)

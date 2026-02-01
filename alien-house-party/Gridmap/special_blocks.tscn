@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bxvdksgwtmsmm"]
+
+[ext_resource type="PackedScene" uid="uid://rqvhenptiwuj" path="res://Gridmap/specialBlock.glb" id="1_u7hy1"]
+[ext_resource type="Texture2D" uid="uid://dipvfq8usmmjg" path="res://Gridmap/specialBlock_peopleSprite.png" id="2_08jv3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qau1j"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_08jv3")
+
+[node name="specialBlocks" unique_id=1537366085 instance=ExtResource("1_u7hy1")]
+
+[node name="PeopleBlock" parent="." index="0" unique_id=1841848234]
+material_override = SubResource("StandardMaterial3D_qau1j")

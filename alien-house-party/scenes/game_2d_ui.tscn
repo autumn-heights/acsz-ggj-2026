@@ -55,7 +55,7 @@ text = "Have Debug Conversation"
 
 [node name="DialogueBox" parent="." unique_id=1567766212 instance=ExtResource("1_u85jq")]
 unique_name_in_owner = true
-position = Vector2(50, 500)
+position = Vector2(50, 550)
 dialogue_box_height = 75
 
 [node name="NavigationButtons" type="HBoxContainer" parent="." unique_id=1115661204]

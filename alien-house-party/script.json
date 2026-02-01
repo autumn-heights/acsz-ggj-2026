@@ -65,7 +65,7 @@
 		],
 	"update_stats": {},
 	"set_flag": [],
-	"next": "choice_kitchen_1"
+	"next": "choice_kitchen_pizza"
   },
 	"choice_kitchen_pizza": {
 		"type": "choice",

@@ -54,7 +54,7 @@ func OnDirectionChanged(direction: Variant) -> void:
 func OnFinishedMove():
 	isMoving = false
 	MovementStateChanged.emit(isMoving)
-	if (randi() % 3 == 0):
+	if (randi() % 2 == 0):
 		RandomEncountered.emit()
 
 

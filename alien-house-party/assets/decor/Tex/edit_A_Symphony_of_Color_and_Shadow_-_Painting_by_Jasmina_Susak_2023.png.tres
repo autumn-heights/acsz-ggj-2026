@@ -4,7 +4,7 @@
 
 [resource]
 resource_name = "edit_A_Symphony_of_Color_and_Shadow_-_Painting_by_Jasmina_Susak_2023.png"
+shading_mode = 0
 albedo_texture = ExtResource("1_syrhe")
-roughness = 0.5
 texture_filter = 2
 texture_repeat = false

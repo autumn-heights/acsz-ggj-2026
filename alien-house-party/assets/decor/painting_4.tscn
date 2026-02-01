@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cp7fsbdnwbwma"]
+
+[ext_resource type="ArrayMesh" uid="uid://cggu7wa4l61le" path="res://assets/decor/meshes/Decor_Plane_016.res" id="1_mwo0u"]
+
+[node name="Painting4" type="Node3D" unique_id=90226934]
+
+[node name="DecorPlane016" type="MeshInstance3D" parent="." unique_id=193216326]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = ExtResource("1_mwo0u")

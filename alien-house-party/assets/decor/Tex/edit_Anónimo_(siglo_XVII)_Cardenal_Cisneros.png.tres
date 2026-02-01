@@ -4,7 +4,7 @@
 
 [resource]
 resource_name = "edit_Anónimo_(siglo_XVII)_Cardenal_Cisneros.png"
+shading_mode = 0
 albedo_texture = ExtResource("1_rbsmd")
-roughness = 0.5
 texture_filter = 2
 texture_repeat = false

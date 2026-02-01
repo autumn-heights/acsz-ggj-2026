@@ -4,7 +4,7 @@
 
 [resource]
 resource_name = "edit_Dare_Birsa,_Med_in_mleko,_2017,_240×160_cm.png"
+shading_mode = 0
 albedo_texture = ExtResource("1_s082l")
-roughness = 0.5
 texture_filter = 2
 texture_repeat = false

@@ -11,6 +11,7 @@ var thing_dict = {
 	"quest":Vector2i(1,0),
 	"blocker":Vector2i(2, 0),
 }
+
 var room_dict = {
 	Global.RoomStates.KITCHEN: Vector2i(0, 4),
 	Global.RoomStates.BATHROOM: Vector2i(0, 5),

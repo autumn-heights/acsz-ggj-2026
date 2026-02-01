@@ -1,8 +1,13 @@
-[gd_scene format=3 uid="uid://cgkpdo5l0bfrc"]
+[gd_scene format=3 uid="uid://bevhylkgndyba"]
 
-[ext_resource type="ArrayMesh" uid="uid://cuwvuya0v5te0" path="res://assets/decor/meshes/Decor_Cube_008.res" id="1_qia8q"]
+[ext_resource type="ArrayMesh" uid="uid://beiynntb1gqov" path="res://assets/decor/meshes/Decor_Cube_008.res" id="1_qia8q"]
+[ext_resource type="Material" uid="uid://y2c27yiive2g" path="res://assets/decor/Tex/bbtc-11.tres" id="2_1eovr"]
+[ext_resource type="Material" uid="uid://myjar4401wd4" path="res://assets/decor/Tex/bbtc-1.tres" id="3_c38a3"]
 
 [node name="BenchStraight" type="Node3D" unique_id=1163137643]
 
 [node name="DecorCube008" type="MeshInstance3D" parent="." unique_id=1169102914]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_qia8q")
+surface_material_override/0 = ExtResource("2_1eovr")
+surface_material_override/1 = ExtResource("3_c38a3")

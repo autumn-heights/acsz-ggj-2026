@@ -349,10 +349,64 @@
 		{"speaker": "PLAYER_CHARACTER", "text": "No promises that I won't talk about goo, though. It's one of my favourite things."},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: I guess I can compromise!! As long as you promise one more thing!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: No telling my parents!! Okay!!"},
-		{"speaker": "PLAYER_CHARACTER", "text": "You got it!"}
+		{"speaker": "PLAYER_CHARACTER", "text": "You got it!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Anyway!! I was in the middle of searching for the fire extinguisher!!"},
+		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: So I gotta run!! Seeya!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Woah. I feel like a survived that by the membranes of my antennae.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I hope she didn't notice how much I was fidgeting with my ray gun in my back pocket.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Wait. Did she drop something?)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(It's...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(... a weed cigarette???)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I should hang onto this and see if I can return it to her.)"}
 		],
 	"update_stats": {},
-	"set_flag": [],
+	"set_flag": ["has_cigarette"],
+	"next": "choice_foyer_2"
+  },
+
+  "choice_foyer_2": {
+		"type": "choice",
+		"choices": [
+		  {
+			"text": "Smoke it right here and now",
+			"check": 1,
+			"required_flags": [],
+			"pass": "dialogue_foyer_weed_1",
+			"fail": "dialogue_foyer_weed_1"
+		  },
+		  {
+			"text": "Hang onto it",
+			"check": 1,
+			"required_flags": [],
+			"pass": "dialogue_foyer_weed_2",
+			"fail": "dialogue_foyer_weed_2"
+		  }
+		]
+	  },
+
+	
+	"dialogue_foyer_weed_1": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(I'm a cool kid now.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I can smoke a weed cigarette.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(Shouldn't be too difficult to light it with my ray gun on the lowest setting...)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "AUGH"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Glodldl, that's awful!!!!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Well, it's all burnt up now. So that's the end of that."}
+		],
+	"update_stats": {},
+	"set_flag": ["has_cigarette"],
 	"next": null
-  }
+  	},
+	
+	"dialogue_foyer_weed_2": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(Yeah, I should return it to her)."}
+		],
+	"update_stats": {},
+	"set_flag": ["has_cigarette"],
+	"next": null
+  	}
 }

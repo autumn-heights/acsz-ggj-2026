@@ -5,6 +5,8 @@ var characterHeight: float = 3 # The character's height.
 var isMoving: bool = false
 signal MovementStateChanged(state)
 
+signal RandomEncountered()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -49,12 +51,21 @@ func OnDirectionChanged(direction: Variant) -> void:
 	var tweenTurn: Tween = create_tween()
 	var newRotation = lerp_angle(rotation.y, deg_to_rad(newDirection), 1)
 	tweenTurn.tween_property(self,"rotation:y", newRotation, 0.2)
-	tweenTurn.tween_callback(OnFinishedMove)
+	tweenTurn.tween_callback(OnFinishedTurning)
 
 func OnFinishedMove():
 	isMoving = false
 	MovementStateChanged.emit(isMoving)
+	GenerateEncounter()
 
+func OnFinishedTurning():
+	isMoving = false
+	MovementStateChanged.emit(isMoving)
+
+func GenerateEncounter():
+	var encounterChance = randi() % 11
+	if encounterChance == 0:
+		RandomEncountered.emit()
 
 func _on_d_navigator_location_initialised(startingX: Variant, startingY: Variant) -> void:
 	position = Vector3(startingX, characterHeight, startingY)

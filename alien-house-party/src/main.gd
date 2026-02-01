@@ -7,6 +7,7 @@ extends Control
 @onready var map3d = $GamestateManager/Map3d
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	randomize()
 	game_2d_ui.visible = false;
 	main_menu.visible = true;
 	
@@ -19,7 +20,11 @@ func _process(delta: float) -> void:
 
 
 func _on_start_the_game():
-	
 	game_2d_ui.visible = true;
 	main_menu.visible = false;
 	map3d.digest_tiles()
+
+
+func _on_player_character_random_encountered() -> void:
+	print("RANDOM ENCOUNTER RAAAAAGH")
+	#PROBABLY PUT A SIGNAL HERE TO TELL 2DNAVIGATOR/PLAYERCHARACTER IF THEY CAN MOVE

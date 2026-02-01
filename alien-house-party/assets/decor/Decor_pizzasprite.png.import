@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6bd84vomsexr"
-path="res://.godot/imported/attendees_sprite_crushed.png-a69dcf0a61b4308d971d9a247634fce5.ctex"
+uid="uid://cvrcfnynegmio"
+path.s3tc="res://.godot/imported/Decor_pizzasprite.png-1571730c73e494dc81bc13f9f7681179.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "2a2075602f0684288a0e19ea1203de30"
 }
 
 [deps]
 
-source_file="res://attendees_sprite_crushed.png"
-dest_files=["res://.godot/imported/attendees_sprite_crushed.png-a69dcf0a61b4308d971d9a247634fce5.ctex"]
+source_file="res://assets/decor/Decor_pizzasprite.png"
+dest_files=["res://.godot/imported/Decor_pizzasprite.png-1571730c73e494dc81bc13f9f7681179.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

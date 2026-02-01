@@ -112,10 +112,14 @@ transform = Transform3D(0.9999713, -0.0037080536, 0.006608506, 0.003724857, 0.99
 [node name="MusicStream" type="AudioStreamPlayer" parent="." unique_id=630698904]
 stream = ExtResource("7_o6xl0")
 
+[connection signal="pressed_go_left" from="Game2dUi" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_game_2d_ui_pressed_go_left"]
+[connection signal="pressed_go_right" from="Game2dUi" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_game_2d_ui_pressed_go_right"]
+[connection signal="pressed_go_straight" from="Game2dUi" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_game_2d_ui_pressed_go_straight"]
 [connection signal="MovementStateChanged" from="2DNavigation/PlayerCharacter" to="2DNavigation/PlayerCharacter/2DNavigator" method="_on_player_character_movement_state_changed"]
 [connection signal="MovementStateChanged" from="2DNavigation/PlayerCharacter" to="GamestateManager" method="_on_player_character_movement_state_changed"]
 [connection signal="locationInitialised" from="2DNavigation/PlayerCharacter/2DNavigator" to="2DNavigation/PlayerCharacter" method="_on_d_navigator_location_initialised"]
 
+[editable path="Game2dUi"]
 [editable path="MainMenu"]
 [editable path="2DNavigation"]
 [editable path="2DNavigation/PlayerCharacter"]

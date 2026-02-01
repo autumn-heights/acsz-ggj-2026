@@ -18,6 +18,7 @@ var tileY: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	pass
 
 func lateReady() -> void:
 	#Find spawn location on 2d map, set tile location to there, then tell the 3d PlayerCharacter
@@ -144,3 +145,18 @@ func _on_player_character_movement_state_changed(state: Variant) -> void:
 		print("Can now move")
 	else:
 		print("Can no longer move")
+
+
+func _on_game_2d_ui_pressed_go_left() -> void:
+	if canMove:
+		navigationLeft()
+
+
+func _on_game_2d_ui_pressed_go_right() -> void:
+	if canMove:
+		navigationRight()
+
+
+func _on_game_2d_ui_pressed_go_straight() -> void:
+	if canMove:
+		navigationUp()

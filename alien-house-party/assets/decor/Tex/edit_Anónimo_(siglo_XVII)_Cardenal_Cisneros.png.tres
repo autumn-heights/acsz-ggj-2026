@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnmomqnuik8xa"]
+
+[ext_resource type="Texture2D" uid="uid://cqvog8l8ivmsf" path="res://assets/decor/Decor_edit_Anónimo_(siglo_XVII)_Cardenal_Cisneros.png" id="1_rbsmd"]
+
+[resource]
+resource_name = "edit_Anónimo_(siglo_XVII)_Cardenal_Cisneros.png"
+albedo_texture = ExtResource("1_rbsmd")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

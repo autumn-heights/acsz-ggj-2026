@@ -38,6 +38,33 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={
+"materials": {
+"edit_A_Symphony_of_Color_and_Shadow_-_Painting_by_Jasmina_Susak_2023.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/decor/Tex/edit_A_Symphony_of_Color_and_Shadow_-_Painting_by_Jasmina_Susak_2023.png.tres",
+"use_external/path": "uid://cb38ysc3iahpw"
+},
+"edit_Anónimo_(siglo_XVII)_Cardenal_Cisneros.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/decor/Tex/edit_Anónimo_(siglo_XVII)_Cardenal_Cisneros.png.tres",
+"use_external/path": "uid://bnmomqnuik8xa"
+},
+"edit_Dare_Birsa,_Med_in_mleko,_2017,_240×160_cm.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/decor/Tex/edit_Dare_Birsa,_Med_in_mleko,_2017,_240×160_cm.png.tres",
+"use_external/path": "uid://dwbtc7q23qogs"
+},
+"edit_Diego_Rivera_-_Zapata-style_Landscape_-_Google_Art_Project.png": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/decor/Tex/edit_Diego_Rivera_-_Zapata-style_Landscape_-_Google_Art_Project.png.tres",
+"use_external/path": "uid://c7r53ib8e7n8g"
+},
+"pizzasprite": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://assets/decor/Tex/pizzasprite.tres",
+"use_external/path": "uid://n6o8ys2otli"
+}
+},
 "meshes": {
 "Decor_Cube_001": {
 "generate/lightmap_uv": 0,
@@ -66,6 +93,42 @@ _subresources={
 "save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Cube_004.res",
 "save_to_file/path": "uid://dosm3gl1n830n"
 },
+"Decor_Cube_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Cube_005.res",
+"save_to_file/path": "uid://c02ek2c4t1q6r"
+},
+"Decor_Cube_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Cube_007.res",
+"save_to_file/path": "uid://cdhcmnrog1hyg"
+},
+"Decor_Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Cube_008.res",
+"save_to_file/path": "uid://beiynntb1gqov"
+},
+"Decor_Cube_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Cube_010.res",
+"save_to_file/path": "uid://c521ehfqpkoq8"
+},
 "Decor_Plane_001": {
 "generate/lightmap_uv": 0,
 "generate/lods": 0,
@@ -83,6 +146,42 @@ _subresources={
 "save_to_file/enabled": true,
 "save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Plane_008.res",
 "save_to_file/path": "uid://c1pruigb3ngmj"
+},
+"Decor_Plane_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Plane_014.res",
+"save_to_file/path": "uid://f0ouie42flqy"
+},
+"Decor_Plane_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Plane_015.res",
+"save_to_file/path": "uid://x3csaylx120k"
+},
+"Decor_Plane_016": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Plane_016.res",
+"save_to_file/path": "uid://dah224ahbl48u"
+},
+"Decor_Plane_017": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/decor/meshes/Decor_Plane_017.res",
+"save_to_file/path": "uid://c66f3w5jnlptm"
 }
 }
 }

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cgkpdo5l0bfrc"]
+
+[ext_resource type="ArrayMesh" uid="uid://cuwvuya0v5te0" path="res://assets/decor/meshes/Decor_Cube_008.res" id="1_qia8q"]
+
+[node name="BenchStraight" type="Node3D" unique_id=1163137643]
+
+[node name="DecorCube008" type="MeshInstance3D" parent="." unique_id=1169102914]
+mesh = ExtResource("1_qia8q")

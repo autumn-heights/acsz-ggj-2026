@@ -1,11 +1,9 @@
 extends Node3D
 
 var characterHeight: float = 3 # The character's height.
-
+var player_position_2D : Vector2i
 var isMoving: bool = false
-signal MovementStateChanged(state)
-
-signal RandomEncountered()
+signal MovementStateChanged(state, player_position_2D)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +22,7 @@ func OnCharacterMoved(newX: Variant, newY: Variant) -> void:
 	var tweenStep: Tween = create_tween()
 	tweenStep.tween_property(self, "position",  Vector3((position.x + ((newX - position.x)/2)), (characterHeight + 0.5), (position.z + ((newY - position.z)/2))), 0.2)
 	tweenStep.tween_property(self, "position",  Vector3(newX, characterHeight, newY), 0.2)
+	player_position_2D = Vector2i(newX, newY) ## save where the player is moving to
 	tweenStep.tween_callback(OnFinishedMove)
 	
 	# Lets print the new position out too, just so we know :)
@@ -51,21 +50,12 @@ func OnDirectionChanged(direction: Variant) -> void:
 	var tweenTurn: Tween = create_tween()
 	var newRotation = lerp_angle(rotation.y, deg_to_rad(newDirection), 1)
 	tweenTurn.tween_property(self,"rotation:y", newRotation, 0.2)
-	tweenTurn.tween_callback(OnFinishedTurning)
+	tweenTurn.tween_callback(OnFinishedMove)
 
 func OnFinishedMove():
 	isMoving = false
-	MovementStateChanged.emit(isMoving)
-	GenerateEncounter()
+	MovementStateChanged.emit(isMoving, player_position_2D)
 
-func OnFinishedTurning():
-	isMoving = false
-	MovementStateChanged.emit(isMoving)
-
-func GenerateEncounter():
-	var encounterChance = randi() % 11
-	if encounterChance == 0:
-		RandomEncountered.emit()
 
 func _on_d_navigator_location_initialised(startingX: Variant, startingY: Variant) -> void:
 	position = Vector3(startingX, characterHeight, startingY)

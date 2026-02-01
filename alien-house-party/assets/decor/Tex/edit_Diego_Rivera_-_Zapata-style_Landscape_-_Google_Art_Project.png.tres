@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7r53ib8e7n8g"]
+
+[ext_resource type="Texture2D" uid="uid://bp0btdi4rlgby" path="res://assets/decor/Decor_edit_Diego_Rivera_-_Zapata-style_Landscape_-_Google_Art_Project.png" id="1_d5xrp"]
+
+[resource]
+resource_name = "edit_Diego_Rivera_-_Zapata-style_Landscape_-_Google_Art_Project.png"
+albedo_texture = ExtResource("1_d5xrp")
+roughness = 0.5
+texture_filter = 2
+texture_repeat = false

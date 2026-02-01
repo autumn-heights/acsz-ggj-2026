@@ -1,8 +1,15 @@
 [gd_scene format=3 uid="uid://b8afht7p1nqo5"]
 
-[ext_resource type="ArrayMesh" uid="uid://x37ulbyb48rw" path="res://assets/decor/meshes/Decor_Cube_001.res" id="1_mgyhm"]
+[ext_resource type="ArrayMesh" uid="uid://degngc70tvhji" path="res://assets/decor/meshes/Decor_Cube_001.res" id="1_mgyhm"]
+[ext_resource type="Material" uid="uid://2qsdqd8h3iji" path="res://assets/decor/Tex/new_standard_material_3d.tres" id="2_ugmvd"]
+[ext_resource type="Material" uid="uid://drp52u4qu75fj" path="res://assets/decor/Tex/2new_standard_material_3d.tres" id="3_t22xs"]
+[ext_resource type="Material" uid="uid://bvv2or3g8gb18" path="res://assets/decor/Tex/bbtc-3.tres" id="4_8in58"]
 
 [node name="Sink" type="Node3D" unique_id=1024355340]
 
 [node name="DecorCube001" type="MeshInstance3D" parent="." unique_id=811096581]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_mgyhm")
+surface_material_override/0 = ExtResource("2_ugmvd")
+surface_material_override/1 = ExtResource("3_t22xs")
+surface_material_override/2 = ExtResource("4_8in58")

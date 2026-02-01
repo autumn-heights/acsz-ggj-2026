@@ -95,7 +95,7 @@
 			"fail": "dialogue_kitchen_pizza_weed"
 		  }
 		]
-	  },
+	},
 	"dialogue_kitchen_pizza_decline": {
 	"type": "talking",
 	"rooms": [],
@@ -209,10 +209,252 @@
 		{"speaker": "attendees_sprite_crushed10.png", "text": "..."},
 		{"speaker": "PLAYER_CHARACTER", "text": "(Oh glorg. How long has she been starting at me.)"}
 		],
-	"update_stats": {},
-	"set_flag": [""],
-	"next": "choice_foyer"
-  },
+		"update_stats": {
+
+		},
+		"set_flag": [
+			"pizza_in_oven"
+		],
+		"next": null
+	},
+	"dialogue_kitchen_pizza_major_success": {
+		"type": "talking",
+		"lines": [
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "[SUCCESS] Yes, let me have a go at it."
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(The kitchen is scattered with food components of varying familiarity.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(Some of these are absolutely intolerable to my refined palate...)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(... but humans tend to react negatively when I try to explain this.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "Let me try to recreate my great brood-father's classic pizza formulation."
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "A little fungus matter.... a little purple pepperoni......"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: little buddy that looks raaaaaad :)"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: let's chuck that little monster in the oven"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: and when it's done you need to let me steal a slice :O"
+			}
+		],
+		"update_stats": {
+
+		},
+		"set_flag": [
+			"pizza_in_oven"
+		],
+		"next": null
+	},
+	"dialogue_kitchen_pizza_major_failure": {
+		"type": "talking",
+		"lines": [
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "[FAIL] Yes, let me have a go at it."
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(The kitchen is scattered with food components of varying familiarity.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(Some of these are absolutely intolerable to my refined palate...)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(... but humans tend to react negatively when I try to explain this.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(No time to falter! Let me follow my heart...)"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: uhh little buddy"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: :)"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: listen i love what you're going for but uh"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: i don't know if Gressica's parents will appreciate you using up all the dish soap"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: come back in a bit when it's ready"
+			}
+		],
+		"update_stats": {
+
+		},
+		"set_flag": [
+			"pizza_in_oven"
+		],
+		"next": null
+	},
+	"dialogue_kitchen_pizza_minor_failure": {
+		"type": "talking",
+		"lines": [
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "[SUCCESS] Yes, let me have a go at it."
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(What do humans put on pizzas....???)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(I've seen pizzas in human cartoons... there's something red, and something yellow...)"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: hey little buddy :)"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: you sure you don't wanna put anything other than cheese and tomato on"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: well everyone's got their own tastes"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: come back later and you'll get to taste it"
+			}
+		],
+		"update_stats": {
+
+		},
+		"set_flag": [
+			"pizza_in_oven"
+		],
+		"next": null
+	},
+	"dialogue_kitchen_pizza_weed": {
+		"type": "talking",
+		"lines": [
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: yooooo little buddy"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: is that a"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: weed cigarette :))"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: i don't think i can think of something more radical to put on a pizza"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: hell yeeeaaah"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: chuck that little monster in there"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: this pizza is gonna be bangin"
+			},
+			{
+				"speaker": "attendees_sprite_crushed3.png",
+				"text": "cheremy: come back in a bit to try it"
+			}
+		],
+		"update_stats": {
+
+		},
+		"set_flag": [],
+		"next": null
+	},
+	"dialogue_foyer_intro": {
+		"type": "talking",
+		"lines": [
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(The door is opened! This is it!)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(My chance to blend in! To become one of the cool teens!)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(I couldn't believe it when I received an invitation to a house party...)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(And from my crush, of all people!!)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(I hear Gressica's parents are super strict. But they're out of town for the whole month...)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(On some kind of expedition to the South Pole.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(So they won't have any contact with home at all for weeks.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(Naturally, Gressica has invited everyone she knows to her house on the first day.)"
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(I can't wait to get to spend time with awesome and cool teens!!)"
+			},
+			{
+				"speaker": "attendees_sprite_crushed10.png",
+				"text": "..."
+			},
+			{
+				"speaker": "PLAYER_CHARACTER",
+				"text": "(Oh glorg. How long has she been starting at me.)"
+			}
+		],
+		"update_stats": {
+
+		},
+		"set_flag": [
+			""
+		],
+		"next": "choice_foyer"
+	},
 	"choice_foyer": {
 		"type": "choice",
 		"choices": [
@@ -243,10 +485,7 @@
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the partay!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Teehee!!"}
 		],
-	"update_stats": {},
-	"set_flag": [],
-	"next": "dialogue_foyer_pt2"
-  	},
+		"update_stats": {
 
 	
 	"dialogue_foyer_minor_FAIL": {
@@ -279,10 +518,7 @@
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Teehee!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the party!!"}
 		],
-	"update_stats": {},
-	"set_flag": [],
-	"next": "dialogue_foyer_pt2"
-  	},
+		"update_stats": {
 
 	
 	
@@ -328,32 +564,33 @@
 		{"speaker": "PLAYER_CHARACTER", "text": "(... a weed cigarette???)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "(I should hang onto this and see if I can return it to her.)"}
 		],
-	"update_stats": {},
-	"set_flag": ["has_cigarette"],
-	"next": "choice_foyer_2"
-  },
+		"update_stats": {
 
-  "choice_foyer_2": {
+		},
+		"set_flag": [
+			"has_cigarette"
+		],
+		"next": "choice_foyer_2"
+	},
+	"choice_foyer_2": {
 		"type": "choice",
 		"choices": [
-		  {
-			"text": "Smoke it right here and now",
-			"check": 1,
-			"required_flags": [],
-			"pass": "dialogue_foyer_weed_1",
-			"fail": "dialogue_foyer_weed_1"
-		  },
-		  {
-			"text": "Hang onto it",
-			"check": 1,
-			"required_flags": [],
-			"pass": "dialogue_foyer_weed_2",
-			"fail": "dialogue_foyer_weed_2"
-		  }
+			{
+				"text": "Smoke it right here and now",
+				"check": 1.0,
+				"required_flags": [],
+				"pass": "dialogue_foyer_weed_1",
+				"fail": "dialogue_foyer_weed_1"
+			},
+			{
+				"text": "Hang onto it",
+				"check": 1.0,
+				"required_flags": [],
+				"pass": "dialogue_foyer_weed_2",
+				"fail": "dialogue_foyer_weed_2"
+			}
 		]
-	  },
-
-	
+	},
 	"dialogue_foyer_weed_1": {
 	"type": "talking",
 	"rooms": [],
@@ -365,20 +602,7 @@
 		{"speaker": "PLAYER_CHARACTER", "text": "Glodldl, that's awful!!!!"},
 		{"speaker": "PLAYER_CHARACTER", "text": "Well, it's all burnt up now. So that's the end of that."}
 		],
-	"update_stats": {},
-	"set_flag": ["has_cigarette"],
-	"next": null
-  	},
-	
-	"dialogue_foyer_weed_2": {
-	"type": "talking",
-	"lines": [
-		{"speaker": "PLAYER_CHARACTER", "text": "(Yeah, I should return it to her)."}
-		],
-	"update_stats": {},
-	"set_flag": ["has_cigarette"],
-	"next": null
-  	},
+		"update_stats": {
 
 	
 	"dialogue_laundry_1": {

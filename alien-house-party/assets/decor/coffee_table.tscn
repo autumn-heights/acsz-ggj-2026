@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://d4ji3wwfy5bxp"]
 
-[ext_resource type="ArrayMesh" uid="uid://dmeuu6qurr5vq" path="res://assets/decor/meshes/Decor_Plane_001.res" id="1_hu02d"]
+[ext_resource type="ArrayMesh" uid="uid://dfaxx4u3veve6" path="res://assets/decor/meshes/Decor_Plane_001.res" id="1_hu02d"]
+[ext_resource type="Material" uid="uid://bvv2or3g8gb18" path="res://assets/decor/Tex/bbtc-3.tres" id="2_p0k5n"]
 
 [node name="Coffee Table" type="Node3D" unique_id=461535550]
 
 [node name="DecorPlane001" type="MeshInstance3D" parent="." unique_id=302840555]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_hu02d")
+surface_material_override/0 = ExtResource("2_p0k5n")

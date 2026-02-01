@@ -51,17 +51,17 @@ func load_json_file(path: String) -> void:
 	var parse_result = JSON.parse_string(json_string) 
 	json_data = parse_result
 
-func get_available_dialogues_for_room(room_name: String) -> Array[String]:
+func get_available_dialogues_for_room() -> Array[String]:
 	var available: Array[String] = []
 	for dialogue_id in json_data.keys():
 		if "rooms" in json_data[dialogue_id]:
-			if (room_name in json_data[dialogue_id]["rooms"] 
+			if (Global.current_room in json_data[dialogue_id]["rooms"] 
 			and dialogue_id not in Global.completed_dialogues):
 				available.append(dialogue_id)
 	return available
 
-func try_select_dialogue(room_name: String) -> bool:
-	var available: Array[String] = get_available_dialogues_for_room(room_name)
+func try_select_dialogue() -> bool:
+	var available: Array[String] = get_available_dialogues_for_room()
 	if available.size() > 0:
 		var chosen = available.pick_random()
 		trigger_new_dialogue(chosen)
@@ -84,10 +84,13 @@ func trigger_new_dialogue(script_id: String):
 	elif json_data[script_id]["type"] == "choice":
 		dialogue_box.visible = false;
 		nav_buttons.visible = false;
+		choice_container.visible = true;
 		current_script_id = script_id;
 		display_choice(script_id)
 
-func trigger_next_dialogue_line():
+func trigger_next_dialogue_line() -> void:
+	if current_script_id == "" or current_script_id not in json_data:
+		return
 	# if there's another line of dialogue to display, then do that
 	# if there's not another line of dialogue to display, then close the dialogue box
 	if current_line_id < num_lines_in_current_script -1 :
@@ -107,9 +110,7 @@ func trigger_next_dialogue_line():
 				
 		trigger_new_dialogue(json_data[current_script_id]["next"])
 	else:
-		dialogue_box.visible = false;
-		nav_buttons.visible = true;
-		Global.completed_dialogues.append(current_script_id)
+		end_conversation()
 
 func _on_advance_dialogue():
 	# FUNCTION THAT GETS TRIGGERED WHEN THE PLAYER ADVANCES THE DIALOGUE BOX
@@ -138,9 +139,15 @@ func display_choice(script_id):
 		var chance_percent: int = int(choice["check"] * 100)
 		
 		var has_required_flags: bool = true
+		
 		if "required_flags" in choice:
 			for flag in choice["required_flags"]:
 				if not Global.has_flag(flag):
+					has_required_flags = false
+		
+		if "forbidden_flags" in choice:
+			for flag in choice["forbidden_flags"]:
+				if Global.has_flag(flag):
 					has_required_flags = false
 		
 		if not has_required_flags:
@@ -152,6 +159,16 @@ func display_choice(script_id):
 
 		choice_container.add_child(button)
 
+func end_conversation() -> void:
+	dialogue_box.visible = false
+	nav_buttons.visible = true
+	choice_container.visible = false
+	Global.completed_dialogues.append(current_script_id)
+	npc_portrait.visible = false
+	current_script_id = ""
+	current_line_id = -1
+	num_lines_in_current_script = -1
+
 func _ready():
 	choice_container = VBoxContainer.new()
 	choice_container.position = Vector2(10, 400)
@@ -159,7 +176,12 @@ func _ready():
 	
 	load_json_file("res://script.json")
 	
+	Global.player_completed_move.connect(try_select_dialogue)
 	dialogue_box.dialogue_advance.connect(_on_advance_dialogue)
+	
+	choice_container.visible = false
+	dialogue_box.visible = false
+	npc_portrait.visible = false
 
 
 func _on_choice_pressed(choice_data):

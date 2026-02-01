@@ -7,7 +7,7 @@ signal dialogue_advance
 @export var dialogue_box_padding: int = 20
 @export var dialogue_box_color: Color = "#bfff3c"
 
-@export var current_text: String = "example text here textextextetxxtetxt"
+@export var current_text: String = ""
 @export var current_display_time: float = 0;
 @export var max_line_length: int = 30; # in chars
 @export var ready_to_advance: bool = 0;

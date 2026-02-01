@@ -74,11 +74,11 @@ func place_mesh(dict_key: Vector2i, map_pos: Vector2i):
 	var mesh_name = get_mesh_name(dict_key)
 	var pos3 = Vector3i(map_pos.x, 0, map_pos.y) ## vector2 -> Vector3
 	print(mesh_name, " ", dict_key)
-	var cell_id = mesh_library.find_item_by_name(mesh_name)
+	var cell_id = GridMap.mesh_library.find_item_by_name(mesh_name)
 	if cell_id == null:
-		printerr(mesh_library, " missing mesh with name ", mesh_name)
+		#printerr(mesh_library, " missing mesh with name ", mesh_name)
 		return
-	set_cell_item(pos3, cell_id)
+	#set_cell_item(pos3, cell_id)
 
 func get_mesh_name(dict_key: Vector2i):
 	for key in tiledict.keys():

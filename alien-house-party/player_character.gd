@@ -1,9 +1,8 @@
 extends Node3D
 
 var characterHeight: float = 3 # The character's height.
-var player_position_2D : Vector2i
 var isMoving: bool = false
-signal MovementStateChanged(state, player_position_2D)
+signal MovementStateChanged(state)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,7 +21,6 @@ func OnCharacterMoved(newX: Variant, newY: Variant) -> void:
 	var tweenStep: Tween = create_tween()
 	tweenStep.tween_property(self, "position",  Vector3((position.x + ((newX - position.x)/2)), (characterHeight + 0.5), (position.z + ((newY - position.z)/2))), 0.2)
 	tweenStep.tween_property(self, "position",  Vector3(newX, characterHeight, newY), 0.2)
-	player_position_2D = Vector2i(newX, newY) ## save where the player is moving to
 	tweenStep.tween_callback(OnFinishedMove)
 	
 	# Lets print the new position out too, just so we know :)
@@ -54,7 +52,7 @@ func OnDirectionChanged(direction: Variant) -> void:
 
 func OnFinishedMove():
 	isMoving = false
-	MovementStateChanged.emit(isMoving, player_position_2D)
+	MovementStateChanged.emit(isMoving)
 
 
 func _on_d_navigator_location_initialised(startingX: Variant, startingY: Variant) -> void:

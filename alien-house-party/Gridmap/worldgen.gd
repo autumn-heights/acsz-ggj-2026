@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 
 var scan_limit = 20
 enum meshlist {wall, floor, door}
+enum special_meshlist {blocker, quest}
 func digest_tiles():
 	#var cards = [Vector2i.UP, Vector2i.RIGHT, Vector2i.DOWN, Vector2i.LEFT]
 	if tileLayers == null:
@@ -42,9 +43,22 @@ func digest_tiles():
 	var active_tilemap = tileLayers.walls
 	var wall_cells = active_tilemap.get_used_cells()
 	var floor_cells = tileLayers.floors.get_used_cells()
-	print(wall_cells)
+	#print(wall_cells)
 	place_cells(tileLayers.walls, meshlist.wall)
 	place_cells(tileLayers.floors, meshlist.floor)
+	if alt_grid != null && alt_grid.mesh_library != null:
+		
+		for cell in tileLayers.special_tiles.get_used_cells():
+			var atlascoord = tileLayers.special_tiles.get_cell_atlas_coords(cell)
+			var p = Vector3i(cell.x, 0, cell.y)
+			if atlascoord == Vector2i(2, 0):
+				alt_grid.set_cell_item(p, special_meshlist.blocker)
+				pass
+			elif atlascoord == Vector2i(1,0):
+				alt_grid.set_cell_item(p, special_meshlist.quest)
+	else:
+		printerr("altgrid is missing or its meshlib is empty")
+	
 	#for cell in wall_cells:
 		#for d in cards:
 		#	var i = 1

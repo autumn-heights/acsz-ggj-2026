@@ -272,7 +272,7 @@
 	"dialogue_foyer_minor_success": {
 	"type": "talking",
 	"lines": [
-		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "[SUCCEED] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "*does a cool nod*"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Hey!! I'm so glad you made it!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Welcome to the partay!!"},
@@ -287,7 +287,7 @@
 	"dialogue_foyer_minor_failure": {
 	"type": "talking",
 	"lines": [
-		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "[FAIL] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "*does a cool nod*"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Hey!! Are you okay!!"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: You've been standing there a while!!"},
@@ -305,7 +305,7 @@
 	"dialogue_foyer_major_success": {
 	"type": "talking",
 	"lines": [
-		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "[SUCCEED] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "What's...."},
 		{"speaker": "PLAYER_CHARACTER", "text": "What's up my hep dolls and rizz cats? Looks like this party is ready to shift from groovy to groovier, if you catch my meaning"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Woah!! I have no idea what that means!! But it sounds awesome!!"},
@@ -322,7 +322,7 @@
 	"dialogue_foyer_major_failure": {
 	"type": "talking",
 	"lines": [
-		{"speaker": "PLAYER_CHARACTER", "text": "(Here goes. I need to impress her!!)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "[FAIL] (Here goes. I need to impress her!!)"},
 		{"speaker": "PLAYER_CHARACTER", "text": "What's...."},
 		{"speaker": "PLAYER_CHARACTER", "text": "What's up my hep dolls and rizz cats? Looks like this party is ready to shift from groovy to groovier, if you catch my meaning"},
 		{"speaker": "attendees_sprite_crushed10.png", "text": "Gressica: Woah!! I have no idea what that means!! Are you okay!!"},
@@ -407,6 +407,44 @@
 		],
 	"update_stats": {},
 	"set_flag": ["has_cigarette"],
+	"next": null
+  	},
+
+	
+	"dialogue_laundry_1": {
+	"type": "talking",
+	"lines": [
+		{"speaker": "PLAYER_CHARACTER", "text": "(There's a washing machine in this room.)"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Yoooooo!"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Yooooooooooo!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(There's also two loud guys.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "Hey guys, awesome party right??"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(The sound of a washing machine is probably one of the most soothing things in the cosmos.)"},
+		{"speaker": "PLAYER_CHARACTER", "text": "(I would do anything to be alone in this room right now.)"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: Yooooooooooooooooo!"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: Yooooooooooooooooooooooo!"},
+		{"speaker": "PLAYER_CHARACTER", "text": "I said, awesome party, right?"},
+		{"speaker": "attendees_sprite_crushed5.png", "text": "Chilp: It's basically"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: The most ripping"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: radical"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: rambunctious"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: gatho to have happened"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: while Gressica's parents"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: are away on an expedition to the South Pole"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chert: my duuude"},
+		{"speaker": "attendees_sprite_crushed4.png", "text": "Chilp: gatho to have happened"},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""},
+		{"speaker": "PLAYER_CHARACTER", "text": ""}
+		],
+	"update_stats": {},
+	"set_flag": [],
 	"next": null
   	}
 }

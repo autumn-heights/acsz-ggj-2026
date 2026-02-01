@@ -3,6 +3,8 @@ extends Control
 @onready var main_menu = %MainMenu
 @onready var game_2d_ui = %Game2dUi
 
+@onready var map2d = $GamestateManager/Layers2D
+@onready var map3d = $GamestateManager/Map3d
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_2d_ui.visible = false;
@@ -20,4 +22,5 @@ func _on_start_the_game():
 	
 	game_2d_ui.visible = true;
 	main_menu.visible = false;
+	map3d.digest_tiles()
 	game_2d_ui.trigger_new_dialogue("dialogue_foyer_intro")

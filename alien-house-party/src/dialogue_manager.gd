@@ -80,6 +80,15 @@ func trigger_next_dialogue_line():
 		display_npc_portrait(json_data[current_script_id]["lines"][current_line_id]["speaker"])
  	elif json_data[current_script_id]["next"] != null:
 		dialogue_box.visible = false;
+		if "set_flag" in json_data[current_script_id]:
+			print("setting flag: ", json_data[current_script_id]["set_flag"])
+			Global.flags.append(json_data[current_script_id]["set_flag"])
+		
+		if "update_stats" in json_data[current_script_id]:
+			if "stigma" in json_data[current_script_id]["update_stats"]:
+				print("updating stats: ", json_data[current_script_id]["update_stats"]["stigma"])
+				Global.stigma += json_data[current_script_id]["update_stats"]["stigma"]
+				
 		trigger_new_dialogue(json_data[current_script_id]["next"])
 	else:
 		dialogue_box.visible = false;
@@ -109,51 +118,41 @@ func display_choice(script_id):
 	for i in range(data["choices"].size()):
 		var choice = data["choices"][i]
 		var button = Button.new()
-		button.text = choice["text"]
-		button.pressed.connect(_on_choice_pressed.bind(choice))        
+		var chance_percent = int(choice["check"] * 100)
+		
+		var has_required_flags = true
+		if "required_flags" in choice:
+			for flag in choice["required_flags"]:
+				if not Global.has_flag(flag):
+					has_required_flags = false
+		
+		if not has_required_flags:
+			button.text = "[LOCKED] " + choice["text"]
+			button.disabled = true
+		else:		
+			button.text = "[CHANCE: " + str(chance_percent) + "%] " + choice["text"]
+			button.pressed.connect(_on_choice_pressed.bind(choice))
+
 		choice_container.add_child(button)
-
-func check_requirements(choice_data):
-	pass
-
-func handle_choice_selection(choice_data):
-	
-	# roll random number 1-6 compare against data
-	# call start_dialogue with pass or fail
-	pass
-
-func end_dialogue():
-	pass
-
 
 func _ready():
 	choice_container = VBoxContainer.new()
 	choice_container.position = Vector2(10, 400)
 	add_child(choice_container)
-	console_label = Label.new()
-	console_label.position = Vector2(10, 10)
-	console_label.size = Vector2(800, 600)
-	add_child(console_label)
-	
-	choice_container = VBoxContainer.new()
-	choice_container.position = Vector2(10, 400)
-	add_child(choice_container)
-	
-	console_label.text = "test"
 	
 	load_json_file("res://script.json")
 	
-	if json_data:
-		print("LOADED SCRIPT: ", json_data)
-	
 	dialogue_box.dialogue_advance.connect(_on_advance_dialogue)
-		
 
 
 func _on_choice_pressed(choice_data):
-	#handle_choice_selection(choice_data)
+	#clear buttons
 	for child in choice_container.get_children():
 		child.queue_free()
+	var roll = randf()
+	var passed = roll < choice_data["check"]
+	var next_dialogue = choice_data["pass"] if passed else choice_data["fail"]
+	trigger_new_dialogue(next_dialogue)
 
 
 func _process(delta: float) -> void:

@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mkt0h2cvj5gm"]
+
+[ext_resource type="ArrayMesh" uid="uid://co3gx5ayilq0t" path="res://assets/decor/meshes/Decor_Cube_002.res" id="1_nvxc0"]
+
+[node name="bed" type="Node3D" unique_id=2002356751]
+
+[node name="DecorCube002" type="MeshInstance3D" parent="." unique_id=1539044752]
+mesh = ExtResource("1_nvxc0")

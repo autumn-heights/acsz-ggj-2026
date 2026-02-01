@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://sglyilv0tpn0"]
+
+[ext_resource type="Texture2D" uid="uid://cvrcfnynegmio" path="res://assets/decor/Decor_pizzasprite.png" id="1_kjqhj"]
+[ext_resource type="ArrayMesh" uid="uid://dmxapgwpkjjys" path="res://assets/decor/meshes/Decor_Plane_008.res" id="2_0e2pl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ii3a3"]
+transparency = 1
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_kjqhj")
+
+[node name="Pizza" type="Node3D" unique_id=895693768]
+
+[node name="DecorPlane008" type="MeshInstance3D" parent="." unique_id=595788499]
+material_override = SubResource("StandardMaterial3D_ii3a3")
+mesh = ExtResource("2_0e2pl")

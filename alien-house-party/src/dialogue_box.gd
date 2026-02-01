@@ -34,6 +34,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
 	current_display_time += delta;
 	
 	if Input.is_action_just_pressed("advance") and advance_button.visible:
@@ -47,6 +48,9 @@ func _process(delta: float) -> void:
 	ready_to_advance = display_text_dict["is_complete"]
 	if ready_to_advance:
 		advance_button.visible = true;
+	else:
+		if (randi() % 100 > 95):
+			$Ggj2026SpeakSound.play()
 	
 func set_new_text(new_text: String):
 	current_text = new_text

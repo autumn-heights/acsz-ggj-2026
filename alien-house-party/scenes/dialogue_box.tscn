@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdg6mlcxyc3wi" path="res://src/dialogue_box.gd" id="1_rc1id"]
 [ext_resource type="Texture2D" uid="uid://ounrwott02nd" path="res://assets/down_arrow-export.png" id="2_fu8b5"]
+[ext_resource type="AudioStream" uid="uid://dic5nerw8u8i7" path="res://assets/audio/ggj2026 SpeakSound.ogg" id="3_tm68y"]
 
 [node name="DialogueBox" type="Node2D" unique_id=1567766212]
 script = ExtResource("1_rc1id")
@@ -28,5 +29,8 @@ offset_top = 186.0
 offset_right = 487.0
 offset_bottom = 214.0
 icon = ExtResource("2_fu8b5")
+
+[node name="Ggj2026SpeakSound" type="AudioStreamPlayer" parent="." unique_id=1789462436]
+stream = ExtResource("3_tm68y")
 
 [connection signal="pressed" from="AdvanceButton" to="." method="_on_advance_button_pressed"]

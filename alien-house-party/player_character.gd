@@ -3,6 +3,7 @@ extends Node3D
 var characterHeight: float = 3 # The character's height.
 var isMoving: bool = false
 signal MovementStateChanged(state)
+signal RandomEncountered()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -53,6 +54,8 @@ func OnDirectionChanged(direction: Variant) -> void:
 func OnFinishedMove():
 	isMoving = false
 	MovementStateChanged.emit(isMoving)
+	if (randi() % 3 == 0):
+		RandomEncountered.emit()
 
 
 func _on_d_navigator_location_initialised(startingX: Variant, startingY: Variant) -> void:

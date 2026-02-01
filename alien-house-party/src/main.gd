@@ -15,6 +15,7 @@ func _ready() -> void:
 	main_menu.visible = true;
 	state_manager.player_controller = player_controller
 	main_menu.start_the_game.connect(_on_start_the_game)
+	randomize()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,3 +35,4 @@ func _on_start_the_game():
 func _on_player_character_random_encountered() -> void:
 	print("RANDOM ENCOUNTER RAAAAAGH")
 	#PROBABLY PUT A SIGNAL HERE TO TELL 2DNAVIGATOR/PLAYERCHARACTER IF THEY CAN MOVE
+	game_2d_ui.try_select_dialogue()

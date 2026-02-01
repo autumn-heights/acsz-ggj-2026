@@ -7,8 +7,10 @@ extends Control
 @onready var map3d = $GamestateManager/Map3d
 @onready var musicPlayer = $MusicStream
 @onready var player_controller = $"2DNavigation/PlayerCharacter/2DNavigator"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	map2d.visible = false
 	game_2d_ui.visible = false;
 	main_menu.visible = true;
 	state_manager.player_controller = player_controller
@@ -20,7 +22,7 @@ func _process(delta: float) -> void:
 
 
 func _on_start_the_game():
-	
+	map2d.visible = true
 	game_2d_ui.visible = true;
 	main_menu.visible = false;
 	map3d.digest_tiles()

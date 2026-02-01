@@ -22,4 +22,7 @@ func _on_player_character_movement_state_changed(isMoving: bool) -> void:
 		## update where the player is on minimap
 		## get the destinaion cell
 		## pass it to the global
-		Global.on_player_complete_move(new_room) ## trigger a function in global
+		if new_room != null:
+			Global.on_player_complete_move(new_room) ## trigger a function in global
+		else:
+			printerr("failed to find room at cell ", new_position)

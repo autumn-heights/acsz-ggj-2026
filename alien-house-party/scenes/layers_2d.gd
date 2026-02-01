@@ -55,10 +55,10 @@ func update_map(player_pos):
 func get_room_from_coords(coords):
 	var tile_id = floors.get_cell_atlas_coords(coords)
 	print(tile_id)
-	return get_tilename_from_atlas_coords(coords)
+	return get_tilename_from_atlas_coords(tile_id)
 
-func get_tilename_from_atlas_coords(atlas_coords):
+func get_tilename_from_atlas_coords(coords):
 	for key in room_dict.keys():
-		if room_dict[key] == atlas_coords:
+		if room_dict[key] == coords:
 			return key
-	printerr("roomdict missing cell with coords: ", atlas_coords)
+	printerr("roomdict missing cell with coords: ", coords)

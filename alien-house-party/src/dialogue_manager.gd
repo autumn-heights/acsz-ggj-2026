@@ -1,5 +1,9 @@
 extends Node
 
+signal pressed_go_straight
+signal pressed_go_left
+signal pressed_go_right
+
 var json_data: Dictionary
 var console_label: Label
 var choice_container: VBoxContainer
@@ -8,10 +12,16 @@ var current_script_id: String
 var current_line_id: int = -1;
 var num_lines_in_current_script: int = -1;
 
+var movement_cooldown = 0;
+var movement_cooldown_max = 0.5; # in seconds
+
 @onready var dialogue_box = %DialogueBox
 @onready var npc_portrait = %NPCPortrait
+@onready var nav_buttons = %NavigationButtons
 
 const npc_textures = {
+	"PLAYER_CHARACTER":
+		preload("res://assets/attendees/aftonsparv.png"),
 	"attendees_sprite_crushed1.png":
 		preload("res://assets/attendees/attendees_sprite_crushed1.png"),
 	"attendees_sprite_crushed2.png":
@@ -43,95 +53,134 @@ func load_json_file(path: String) -> void:
 
 func trigger_new_dialogue(script_id: String):
 	
+	if script_id != null and not script_id in json_data.keys():
+		assert(false) # incorrect script_id triggered!
+	
 	if json_data[script_id]["type"] == "talking":
 		current_script_id = script_id;
 		current_line_id = -1
 		dialogue_box.visible = true;
+		nav_buttons.visible = false;
 		num_lines_in_current_script = len(json_data[script_id]["lines"])
-		try_next_dialogue_line()
+		trigger_next_dialogue_line()
 	
 	elif json_data[script_id]["type"] == "choice":
-		pass
-		# TODO: display the choice options on the screen
+		dialogue_box.visible = false;
+		nav_buttons.visible = false;
+		current_script_id = script_id;
+		display_choice(script_id)
 
-func try_next_dialogue_line():
+func trigger_next_dialogue_line():
 	# if there's another line of dialogue to display, then do that
 	# if there's not another line of dialogue to display, then close the dialogue box
 	if current_line_id < num_lines_in_current_script -1 :
 		current_line_id += 1
 		display_text(json_data[current_script_id]["lines"][current_line_id]["text"])
+		print(json_data[current_script_id]["lines"][current_line_id]["speaker"])
+		display_npc_portrait(json_data[current_script_id]["lines"][current_line_id]["speaker"])
+ 	elif json_data[current_script_id]["next"] != null:
+		dialogue_box.visible = false;
+		if "set_flag" in json_data[current_script_id]:
+			print("setting flag: ", json_data[current_script_id]["set_flag"])
+			Global.flags.append(json_data[current_script_id]["set_flag"])
+		
+		if "update_stats" in json_data[current_script_id]:
+			if "stigma" in json_data[current_script_id]["update_stats"]:
+				print("updating stats: ", json_data[current_script_id]["update_stats"]["stigma"])
+				Global.stigma += json_data[current_script_id]["update_stats"]["stigma"]
+				
+		trigger_new_dialogue(json_data[current_script_id]["next"])
 	else:
+		dialogue_box.visible = false;
+		nav_buttons.visible = true;
 		pass
-		# TODO: Handle end of dialogue, trigger next step per jsonscript
 
 func _on_advance_dialogue():
 	# FUNCTION THAT GETS TRIGGERED WHEN THE PLAYER ADVANCES THE DIALOGUE BOX
-	try_next_dialogue_line()
+	trigger_next_dialogue_line()
 
 
-func display_text(data: String):
-	dialogue_box.set_new_text(data);
+func display_text(text: String):
+	dialogue_box.set_new_text(text);
 	
-func display_npc_portrait(data: String):
-	npc_portrait.texture = npc_textures[data]
+func display_npc_portrait(npc_texture_key: String):
+	if npc_texture_key in npc_textures.keys():
+		npc_portrait.visible = true
+		npc_portrait.texture = npc_textures[npc_texture_key]
+	else:
+		npc_portrait.visible = false
 
-func display_choice(data):
+func display_choice(script_id):
+	var data = json_data[script_id]
 	for child in choice_container.get_children():
 		child.queue_free()
 	
 	for i in range(data["choices"].size()):
 		var choice = data["choices"][i]
 		var button = Button.new()
-		button.text = choice["text"]
-		button.pressed.connect(_on_choice_pressed.bind(choice))        
+		var chance_percent = int(choice["check"] * 100)
+		
+		var has_required_flags = true
+		if "required_flags" in choice:
+			for flag in choice["required_flags"]:
+				if not Global.has_flag(flag):
+					has_required_flags = false
+		
+		if not has_required_flags:
+			button.text = "[LOCKED] " + choice["text"]
+			button.disabled = true
+		else:		
+			button.text = "[CHANCE: " + str(chance_percent) + "%] " + choice["text"]
+			button.pressed.connect(_on_choice_pressed.bind(choice))
+
 		choice_container.add_child(button)
-
-func check_requirements(choice_data):
-	pass
-
-func handle_choice_selection(choice_data):
-	
-	# roll random number 1-6 compare against data
-	# call start_dialogue with pass or fail
-	pass
-
-func end_dialogue():
-	pass
-
 
 func _ready():
 	choice_container = VBoxContainer.new()
 	choice_container.position = Vector2(10, 400)
 	add_child(choice_container)
-	console_label = Label.new()
-	console_label.position = Vector2(10, 10)
-	console_label.size = Vector2(800, 600)
-	add_child(console_label)
-	
-	choice_container = VBoxContainer.new()
-	choice_container.position = Vector2(10, 400)
-	add_child(choice_container)
-	
-	console_label.text = "test"
 	
 	load_json_file("res://script.json")
 	
-	if json_data:
-		print("LOADED SCRIPT: ", json_data)
-	
 	dialogue_box.dialogue_advance.connect(_on_advance_dialogue)
-		
 
 
 func _on_choice_pressed(choice_data):
-	#handle_choice_selection(choice_data)
+	#clear buttons
 	for child in choice_container.get_children():
 		child.queue_free()
+	var roll = randf()
+	var passed = roll < choice_data["check"]
+	var next_dialogue = choice_data["pass"] if passed else choice_data["fail"]
+	trigger_new_dialogue(next_dialogue)
 
 
 func _process(delta: float) -> void:
+	movement_cooldown -= delta;
+	if Input.is_action_just_pressed("up"):
+		_try_send_movement_signal(pressed_go_straight)
+	elif Input.is_action_just_pressed("left"):
+		_try_send_movement_signal(pressed_go_left)
+	elif Input.is_action_just_pressed("right"):
+		_try_send_movement_signal(pressed_go_right)
+	
 	pass
 
 
+func _try_send_movement_signal(my_signal):
+	if movement_cooldown <= 0 and nav_buttons.visible:
+		my_signal.emit()
+		movement_cooldown = movement_cooldown_max
+		print(my_signal)
+
 func _on_debug_convo_button_pressed() -> void:
 	trigger_new_dialogue("dialogue_1");
+
+func _on_go_left_button_pressed() -> void:
+	_try_send_movement_signal(pressed_go_left)
+
+func _on_go_straight_button_pressed() -> void:
+	_try_send_movement_signal(pressed_go_straight)
+
+func _on_go_right_button_pressed() -> void:
+	_try_send_movement_signal(pressed_go_right)

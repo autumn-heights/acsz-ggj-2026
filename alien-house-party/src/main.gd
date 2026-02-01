@@ -23,3 +23,4 @@ func _on_start_the_game():
 	game_2d_ui.visible = true;
 	main_menu.visible = false;
 	map3d.digest_tiles()
+	game_2d_ui.trigger_new_dialogue("dialogue_foyer_intro")

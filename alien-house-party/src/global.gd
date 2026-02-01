@@ -1,6 +1,6 @@
 extends Node
 
-signal player_moved_to_room(room_name: String)
+signal player_completed_move
 
 enum RoomStates {KITCHEN, FOYER, RUMPUS, BEDROOM, BATHROOM, DINING, LAUNDRY, DOORWAY}
 var current_room : RoomStates
@@ -13,7 +13,6 @@ var stigma: int = 0
 
 # conversation tracking
 var completed_dialogues: Array[String] = []
-var is_in_dialogue: bool = false
 
 # Navigation.
 enum EDirection {NORTH, EAST, SOUTH, WEST}
@@ -27,4 +26,4 @@ func on_player_complete_move(new_room : RoomStates):
 	## called after player has finished moving from the "gamestatemanager"
 	current_room = new_room
 	## read what quests and if to trigger new interaction thingos here
-	player_moved_to_room.emit(new_room) 
+	player_completed_move.emit()

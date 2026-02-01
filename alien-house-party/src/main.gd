@@ -34,4 +34,3 @@ func _on_start_the_game():
 func _on_player_character_random_encountered() -> void:
 	print("RANDOM ENCOUNTER RAAAAAGH")
 	#PROBABLY PUT A SIGNAL HERE TO TELL 2DNAVIGATOR/PLAYERCHARACTER IF THEY CAN MOVE
-	game_2d_ui.trigger_new_dialogue("dialogue_foyer_intro")

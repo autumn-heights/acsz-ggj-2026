@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dic5nerw8u8i7"
+path="res://.godot/imported/ggj2026 SpeakSound.ogg-811e4128fd1a49f869f583af9403a75d.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/ggj2026 SpeakSound.ogg"
+dest_files=["res://.godot/imported/ggj2026 SpeakSound.ogg-811e4128fd1a49f869f583af9403a75d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

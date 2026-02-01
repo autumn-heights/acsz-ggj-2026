@@ -17,6 +17,7 @@
 		"text": "repeat this dialogue",
 		"check": 100,
 		"required_flags": [],
+  			"forbidden_flags": [], 
 		"pass": "dialogue_1",
 		"fail": "dialogue_1"
 	  },
@@ -24,6 +25,7 @@
 		"text": "choice_2",
 		"check": 0.99,
 		"required_flags": [],
+  			"forbidden_flags": [], 
 		"pass": "dialogue_kitchen_pizza_intro",
 		"fail": "dialogue_6"
 	  }
@@ -70,6 +72,7 @@
 			"text": "Politely decline",
 			"check": 1,
 			"required_flags": [],
+  			"forbidden_flags": [], 
 			"pass": "dialogue_kitchen_pizza_decline",
 			"fail": "dialogue_kitchen_pizza_decline"
 		  },
@@ -77,6 +80,7 @@
 			"text": "Make a safe pizza",
 			"check": 0.8,
 			"required_flags": [],
+  			"forbidden_flags": [], 
 			"pass": "dialogue_kitchen_pizza_minor_SUCCEED",
 			"fail": "dialogue_kitchen_pizza_minor_FAIL"
 		  },
@@ -84,6 +88,7 @@
 			"text": "Make the pizza of your dreams",
 			"check": 0.5,
 			"required_flags": [],
+  			"forbidden_flags": [], 
 			"pass": "dialogue_kitchen_pizza_major_SUCCEED",
 			"fail": "dialogue_kitchen_pizza_major_FAIL"
 		  },
@@ -321,6 +326,7 @@
 				"text": "Smoke it right here and now",
 				"check": 1.0,
 				"required_flags": [],
+  			"forbidden_flags": [], 
 				"pass": "dialogue_foyer_weed_1",
 				"fail": "dialogue_foyer_weed_1"
 			},
@@ -328,6 +334,7 @@
 				"text": "Hang onto it",
 				"check": 1.0,
 				"required_flags": [],
+  			"forbidden_flags": [], 
 				"pass": "dialogue_foyer_weed_2",
 				"fail": "dialogue_foyer_weed_2"
 			}
@@ -405,6 +412,7 @@
 			"text": "Join the meditation, and run the washer",
 			"check": 0.5,
 			"required_flags": [],
+  			"forbidden_flags": [], 
 			"pass": "dialogue_laundry_laundry_SUCCEED",
 			"fail": "dialogue_laundry_laundry_FAIL"
 		  },
@@ -618,6 +626,7 @@
 			"text": "...think it's sooo badass.",
 			"check": 0.8,
 			"required_flags": [],
+  			"forbidden_flags": [], 
 			"pass": "dialogue_crush_minor_SUCCEED",
 			"fail": "dialogue_crush_minor_FAIL"
 		  },
@@ -625,6 +634,7 @@
 			"text": "...am finding it a bit overwhelming.",
 			"check": 0.4,
 			"required_flags": [],
+  			"forbidden_flags": [], 
 			"pass": "dialogue_crush_major_SUCCEED",
 			"fail": "dialogue_crush_major_FAIL"
 		  },

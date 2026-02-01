@@ -33,6 +33,6 @@ func animate_character(showing):
 	else:
 		characterTween.set_ease(Tween.EASE_OUT)
 		characterTween.tween_property(sprite_node, "modulate",
-		 Color(1, 1, 1, 0), 3.0)
+		Color(1, 1, 1, 0), 3.0)
 		characterTween.tween_callback(sprite_node.hide)
 	characterTween.tween_callback(characterTween.kill)

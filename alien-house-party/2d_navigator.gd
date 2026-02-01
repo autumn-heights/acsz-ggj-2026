@@ -6,6 +6,7 @@ extends Node2D
 signal direction_changed(direction)
 signal character_moved(newX, newY)
 signal locationInitialised(startingX, startingY)
+signal activatedQuest(newX, newY)
 
 var canMove: bool = true
 
@@ -62,12 +63,18 @@ func navigationUp():
 	var currentTile = Vector2i(tileX, tileY)
 	var targetTile = Vector2i(newTileX, newTileY)
 	var targetTileData: TileData = mapLayers.floors.get_cell_tile_data(targetTile)
+	var specialTileAtlas: Vector2i = mapLayers.special_tiles.get_cell_atlas_coords(targetTile)
 	#var targetTileData: TileData = tiles.get_cell_tile_data(targetTile)
 	# Check if the tile we're attempting to move to is walkable.
 	if targetTileData == null:
 		print("Attempted movement to non walkable tile, returning.")
 		return
-	
+	elif specialTileAtlas == Vector2i():
+		print("Attempted movement to non walkable tile, returning.")
+		return
+	elif specialTileAtlas == Vector2i():
+		activatedQuest.emit(newTileX, newTileY)
+		print("Attempted movement to a quest tile do something here")
 	# If it is walkable, we update our tile position here, and emit to tell the player character
 	# the new worldspace coordinates it should go to.
 	tileX = newTileX

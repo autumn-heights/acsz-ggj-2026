@@ -5,7 +5,6 @@ extends Control
 
 @onready var map2d = $GamestateManager/Layers2D
 @onready var map3d = $GamestateManager/Map3d
-@onready var musicPlayer = $MusicStream
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	randomize()
@@ -24,9 +23,12 @@ func _on_start_the_game():
 	game_2d_ui.visible = true;
 	main_menu.visible = false;
 	map3d.digest_tiles()
-	musicPlayer.play()
+<<<<<<< HEAD
 
 
 func _on_player_character_random_encountered() -> void:
 	print("RANDOM ENCOUNTER RAAAAAGH")
 	#PROBABLY PUT A SIGNAL HERE TO TELL 2DNAVIGATOR/PLAYERCHARACTER IF THEY CAN MOVE
+=======
+	game_2d_ui.trigger_new_dialogue("dialogue_foyer_intro")
+>>>>>>> refs/remotes/origin/movement_system

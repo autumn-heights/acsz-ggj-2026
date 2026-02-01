@@ -2,15 +2,16 @@ extends Control
 
 @onready var main_menu = %MainMenu
 @onready var game_2d_ui = %Game2dUi
-
+@onready var state_manager= $GamestateManager
 @onready var map2d = $GamestateManager/Layers2D
 @onready var map3d = $GamestateManager/Map3d
 @onready var musicPlayer = $MusicStream
+@onready var player_controller = $"2DNavigation/PlayerCharacter/2DNavigator"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	game_2d_ui.visible = false;
 	main_menu.visible = true;
-	
+	state_manager.player_controller = player_controller
 	main_menu.start_the_game.connect(_on_start_the_game)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

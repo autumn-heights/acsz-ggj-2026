@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://bp38s3i8h0i3g"]
+[gd_scene format=3 uid="uid://cqmoks106f3w1"]
 
-[ext_resource type="ArrayMesh" uid="uid://be0p3p4pp6f7x" path="res://assets/decor/meshes/Decor_Cube_007.res" id="1_bgvcy"]
+[ext_resource type="ArrayMesh" uid="uid://cdhcmnrog1hyg" path="res://assets/decor/meshes/Decor_Cube_007.res" id="1_bgvcy"]
 
 [node name="Washer" type="Node3D" unique_id=527275581]
 
 [node name="DecorCube007" type="MeshInstance3D" parent="." unique_id=85202720]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 mesh = ExtResource("1_bgvcy")

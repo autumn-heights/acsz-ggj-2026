@@ -20,3 +20,4 @@ func _on_start_the_game():
 	
 	game_2d_ui.visible = true;
 	main_menu.visible = false;
+	

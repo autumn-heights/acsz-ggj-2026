@@ -52,16 +52,33 @@ func load_json_file(path: String) -> void:
 	json_data = parse_result
 
 func get_available_dialogues_for_room() -> Array[String]:
+	var temp: String = "doorway"
+	if Global.current_room == Global.RoomStates.KITCHEN:
+		temp = "kitchen"
+	elif Global.current_room == Global.RoomStates.FOYER:
+		temp = "foyer"
+	elif Global.current_room == Global.RoomStates.RUMPUS:
+		temp = "rumpus"
+	elif Global.current_room == Global.RoomStates.BEDROOM:
+		temp = "bedroom"
+	elif Global.current_room == Global.RoomStates.BATHROOM:
+		temp = "bathroom"
+	elif Global.current_room == Global.RoomStates.DINING:
+		temp = "dining"
+	elif Global.current_room == Global.RoomStates.LAUNDRY:
+		temp = "laundry"
+	
 	var available: Array[String] = []
 	for dialogue_id in json_data.keys():
 		if "rooms" in json_data[dialogue_id]:
-			if (Global.current_room in json_data[dialogue_id]["rooms"] 
+			if (temp in json_data[dialogue_id]["rooms"] 
 			and dialogue_id not in Global.completed_dialogues):
 				available.append(dialogue_id)
 	return available
 
 func try_select_dialogue() -> bool:
 	var available: Array[String] = get_available_dialogues_for_room()
+	print("CONVERSATIONS: ", available)
 	if available.size() > 0:
 		var chosen = available.pick_random()
 		trigger_new_dialogue(chosen)

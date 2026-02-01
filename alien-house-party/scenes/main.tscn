@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bs1hrl1cwc45r" path="res://scenes/2d_navigation.tscn" id="4_jyhfs"]
 [ext_resource type="AudioStream" uid="uid://cjw1vug218dpf" path="res://AlienKnockogg.ogg" id="4_tipki"]
 [ext_resource type="PackedScene" path="res://scenes/2d_navigation.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://bs1hrl1cwc45r" path="res://scenes/2d_navigation.tscn" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://c61gxnc2itbo3" path="res://Gridmap/gridtiles.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://cwpfw20bvixbl" path="res://scenes/gamestate_manager.tscn" id="6_tefeu"]
 [ext_resource type="AudioStream" uid="uid://cutnasw68r35h" path="res://GGJ2026 Jersey Alien NoTail.ogg" id="7_o6xl0"]
@@ -54,8 +55,9 @@ tile_map_data = PackedByteArray("AAAHAAIAAAABAAQAAAAHAAEAAAABAAQAAAAHAAAAAAABAAQ
 [node name="TileMapLayer" parent="GamestateManager/Layers2D" parent_id_path=PackedInt32Array(290236753, 975565052) index="2" unique_id=740219175]
 tile_map_data = PackedByteArray("AAAKAAEAAAAAAAAAAAAHAAEAAAABAAAAAAA=")
 
-[node name="Map3d" parent="GamestateManager" index="2" unique_id=156595568]
+[node name="Map3d" parent="GamestateManager" index="2" unique_id=156595568 node_paths=PackedStringArray("alt_grid")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+alt_grid = NodePath("GridMap2")
 
 [node name="GridMap" parent="GamestateManager/Map3d" index="0" unique_id=57510860]
 data = {
